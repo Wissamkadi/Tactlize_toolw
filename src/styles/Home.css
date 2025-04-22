@@ -1,0 +1,103 @@
+.home {
+    min-height: 100vh; /* Full viewport height */
+    background-color: var(--primary); /* Dark blue background */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .hero {
+    flex: 1; /* Take up remaining space */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-lg) var(--screen-edge-spacing);
+    
+  }
+  
+  .hero-content {
+    max-width: 70%; /* Left column for text */
+  }
+  
+  .hero h1 {
+    font-size: 4,5rem; 
+    color: var(--white);
+    font-weight: var(--font-weight-semi-bold); /* 600 */
+    line-height: 1.2;
+    margin-bottom: var(--spacing-md); /* 16px */
+  }
+  
+  .hero h1 span {
+    color: var(--secondary); /* Orange for "Architectural Tactics" */
+  }
+  
+  .hero-description {
+    font-size: 24px; 
+    font-family: 'OutfitSemiBold',sans-serif;
+    color: var(--gray-2);
+    margin-bottom: var(--spacing-sm); /* 8px */
+  }
+  
+  .hero-subdescription {
+    font-size: 24px; 
+    font-family: 'OutfitSemiBold',sans-serif;
+    color: var(--gray-2); /* Lighter gray */
+    margin-bottom: var(--spacing-lg); /* 24px */
+  }
+  
+  .hero-buttons {
+    display: flex;
+    gap: var(--spacing-md); /* 16px gap between buttons */
+  }
+  
+  .hero-image {
+    max-width: 30%; /* Right column for image */
+  }
+  
+  .hero-image div {
+    width: 400px;
+    height: 300px;
+    background-color: #BDBDBD; /* Placeholder */
+  }
+  
+  /* Button Styles */
+  .btn {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs); /* 4px gap between text and arrow */
+    padding: var(--spacing-sm) var(--spacing-md); /* 8px 16px */
+    border-radius: 5px;
+    font-size: 1rem; /* 16px */
+    font-weight: var(--font-weight-regular); 
+    font-family: 'OutfitRegular',sans-serif;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.1s ease; /* Smooth transitions for hover and click */
+  }
+  
+  .btn-primary {
+    background-color: var(--secondary); /* Orange */
+    color: var(--white);
+  }
+  
+  .btn-primary:hover {
+    background-color: var(--secondary-hover); /* Lighter orange */
+    color: var(--white);
+  }
+  
+  .btn-secondary {
+    background-color: var(--primary); /* Dark blue */
+    color: var(--secondary); /* Orange text */
+    border: 1px solid var(--secondary); /* Orange border */
+  }
+  
+  .btn-secondary:hover {
+    background-color: var(--secondary); /* Orange background */
+    color: var(--white);
+  }
+  
+  .btn:active {
+    transform: scale(0.95); /* Scale down on click */
+  }
+  
+  .btn-icon {
+    font-size: 1rem;
+  }

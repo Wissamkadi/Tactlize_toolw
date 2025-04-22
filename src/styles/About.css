@@ -1,0 +1,148 @@
+.about-page {
+    min-height: 100vh;
+    background-color: var(--primary);
+    color: var(--white);
+  }
+  
+  .section {
+    padding: var(--spacing-lg) var(--screen-edge-spacing);
+  }
+  
+  .section.intro-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .section.why-it-matters-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .section-content {
+    max-width: 80%;
+  }
+
+  .section:not(.intro-section) .section-content {
+    max-width: 100%; /* Allow text to span full width */
+  }
+  
+  .section-subtitle {
+    font-size: 1.75rem; 
+    color: var(--secondary);
+    font-weight: var(--font-weight-semi-bold);
+    margin-bottom: var(--spacing-sm); 
+    padding-left: var(--spacing-sm);
+  }
+  
+  .section-title {
+    font-size: 3rem; 
+    color: var(--white);
+    font-weight: var(--font-weight-semi-bold);
+    margin-bottom: var(--spacing-2xs); 
+    padding-left: var(--spacing-lg);
+  }
+  
+  .section-tagline {
+    font-size: 1.25rem; 
+    color: var(--gray-3);
+    font-weight: var(--font-weight-semi-bold);
+    margin-bottom: var(--spacing-xs);
+    padding-left: var(--spacing-md); 
+  }
+  
+  .section p {
+    font-size: 1.5rem; 
+    color: var(--gray-2);
+    font-weight: var(--font-weight-regular);
+    margin-bottom: var(--spacing-md);
+    text-align: justify;
+  }
+  
+  .section-image {
+    max-width: 20%;
+  }
+
+  .section .section-content > p:first-of-type {
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .section .section-content > p:last-of-type {
+    margin-top: var(--spacing-md);
+  }
+  
+  .icon-row {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--spacing-md);
+    margin: 0; /* Remove extra margin, spacing handled by paragraphs */
+    width: 100%;
+    padding-left: 120px;
+    padding-right: 120px;
+  }
+  
+  .icon-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-md);
+  }
+  
+  .icon {
+    width: 200px; /* Match Figma size */
+    height: 200px;
+    object-fit: contain; /* Ensure the SVG scales properly */
+  }
+  
+  .icon-item span {
+    font-size: 0.875rem;
+    color: var(--gray-3);
+    font-weight: var(--font-weight-regular);
+  }
+  
+  .plain-list {
+    font-family: 'OutfitRegular',sans-serif;
+    list-style: none;
+    padding-left: var(--spacing-md);
+    margin-top: var(--spacing-xs) 0;
+  }
+  
+  .plain-list li {
+    font-size: 1.5rem; 
+    color: var(--gray-2);
+    margin-bottom: var(--spacing-sm);
+    position: relative; /* For positioning the bullet */
+    padding-left: 20px; /* Space for the bullet */
+    text-align: justify; /* Justify the text */
+  
+  }
+  .plain-list li::before {
+    content: '•'; /* Add a bullet */
+    position: absolute;
+    left: 0;
+    color: var(--secondary-hover); /* Match the text color */
+    font-size: 1.5rem;
+    font-weight: var(--font-weight-semi-bold);
+  }
+  
+  .plain-list li:not(:last-child) {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .highlight2 {
+    color: var(--secondary-hover); /* Orange color */
+    font-weight: var(--font-weight-semi-bold); /* Already semi-bold, but included for clarity */
+    opacity: 70%;
+  }
+
+  .highlight{
+    color: white;
+    opacity: 0.7;
+    }
+  
+  .illustration-placeholder {
+    width: 300px;
+    height: 200px;
+    background-color: #BDBDBD;
+  }

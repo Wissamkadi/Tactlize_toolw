@@ -1,0 +1,114 @@
+.MaintainData-page{
+    min-height: 100vh;
+    background-color: var(--primary);
+    color: var(--white);
+}
+p{
+font-family: 'OutfitRegular',sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 44px;
+color: var(--gray-1);
+order: 1;
+align-self: stretch;
+}
+.section-content{
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 18px;
+flex: none;
+order: 2;
+flex-grow: 0;
+
+
+}
+.highlight{
+color: white;
+opacity: 0.7;
+}
+
+.section {
+    padding: var(--spacing-lg) var(--screen-edge-spacing);
+    padding-top: 0rem; /* adjust these values */
+    padding-bottom: 0rem;
+  }
+  
+  
+  .section.intro-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .section-subtitle {
+    font-size: 1.75rem; 
+    color: var(--secondary);
+    font-weight: var(--font-weight-semi-bold);
+    margin-bottom: var(--spacing-sm); 
+    padding-left: var(--spacing-sm);
+
+}
+  .section-title {
+    font-size: 3rem; 
+    color: var(--white);
+    font-weight: var(--font-weight-semi-bold);
+    margin-bottom: var(--spacing-2xs); 
+    padding-left: var(--spacing-lg);
+  }
+
+.card3 {
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    color: var(--gray-1);
+    box-shadow: 4px 4px 18px rgba(255, 255, 255, 0.15);
+    border-radius: 30px;
+    background: rgba(189, 189, 189, 0.19);
+    font-size: 24px;
+    width: 1080px;
+    height: 200px;
+    margin-bottom: 20px;
+    margin-left: 75px;
+    margin-right: 75px;
+}
+/* Button Styles */
+.btn2{
+    display: flex;
+    align-items: center;
+    font-family: 'OutfitRegular',sans-serif;
+    gap: var(--spacing-xs); /* 4px gap between text and arrow */
+    padding: var(--spacing-sm) var(--spacing-md); /* 8px 16px */
+    border-radius: 12px;
+    font-size: 1rem; /* 16px */
+    font-weight: var(--font-weight-regular); 
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.1s ease; /* Smooth transitions for hover and click */
+    width: 425px;
+    height: 50px;
+    margin-left: 350px;
+}
+  
+.btn-primary {
+    background-color: var(--secondary); /* Orange */
+    color: var(--white);
+}
+.btn-icon{
+    font-size: 1rem;
+}
+#MaintainData{
+  position: absolute;
+  width: 525px;
+  height: 300px;
+  left: 690px;
+  top: 930px;
+}
+/* questionmark */
+#challenge1{
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  left: 1080px;
+  top: 1240px;
+  transform: rotate(7.57deg);
+}

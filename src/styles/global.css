@@ -1,0 +1,864 @@
+/* 1. Global Resets & Variables */
+:root {
+    /* Colors from Figma */
+    --primary: #14213D;
+    --primary-hover: #1B2A50;
+    --secondary: #FCA311;
+    --secondary-hover: #f8b74c;
+    --black: #000000;
+    --gray-4: #666666;
+    --gray-3: #9E9E9E;
+    --gray-2: #BDBDBD;
+    --gray-1: #E5E5E5;
+    --white: #FFFFFF;
+    --rectangle-info: rgba(189, 189, 189, 0.19);
+    --warning: #FBC02D;
+    --error: #E53835;
+    --success: #2E7D31;
+
+    /* Typography */
+    --font-family-navbar: 'OutfitRegular',sans-serif;
+    --font-family-heading: 'OutfitSemiBold', sans-serif;
+    --font-family-body: 'OutfitRegular' sans-serif;
+    --font-size-base: 24px;
+    --font-weight-regular: 400;
+    --font-weight-semi-bold: 600;
+    --font-weight-bold: 700;
+    
+    /* Spacing */
+    --spacing-3xs: 1px;
+    --spacing-2xs: 2px;
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-2xl: 75px;
+    --screen-edge-spacing: 75px;
+    /* Arrows */
+    --arrow-right: url("./icons/Right.svg");
+    --arrow-up: url("./icons/Up.svg");
+    --arrow-down: url("./icons/Down.svg");
+
+    /* Responsive widths */
+    --container-width: clamp(620px, 90vw, 1200px);
+    --dropdown-width: clamp(600px, 80vw, 300px);
+}
+
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 2. Typography */
+nav {
+    font-family:var(--font-family-navbar) ;
+}
+body {
+    font-family: var(--font-family-body);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-regular);
+    color: var(--gray-2);
+    background-color: var(--gray-1);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-heading);
+    color: var(--white);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 4.375rem; /* 70px */
+    font-weight: var(--font-weight-semi-bold);
+}
+
+h2 {
+    font-size: 3.75rem; /* 60px */
+    font-weight: var(--font-weight-semi-bold);
+}
+
+h3 {
+    font-size: 1.75rem; /* 28px */
+    font-weight: var(--font-weight-semi-bold);
+}
+
+h4 {
+    font-size: 1.5rem; /* 24px */
+    font-weight: var(--font-weight-bold);
+}
+
+h5, h6 {
+    font-size: 1.25rem; /* 20px */
+    font-weight: var(--font-weight-semi-bold);
+}
+
+p {
+    font-size: 1.5rem; /* 24px */
+    font-weight: var(--font-weight-regular);
+    color: var(--gray-2);
+    margin-bottom: var(--spacing-md);
+}
+
+a {
+    text-decoration: none;
+    color: var(--secondary);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--secondary-hover);
+}
+
+.text-primary {
+    color: var(--primary);
+}
+
+.text-secondary {
+    color: var(--secondary);
+}
+
+.text-muted {
+    color: var(--gray-3);
+}
+
+/* 3. Layout & Containers */
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-2xl);
+}
+
+.section {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--primary);
+    margin-bottom: var(--spacing-lg);
+}
+
+.section-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-xl) 0;
+    background-color: var(--primary);
+    gap: var(--spacing-lg);
+}
+
+.hero-content {
+    max-width: 50%;
+}
+
+.hero-content h1 {
+    margin-bottom: var(--spacing-lg);
+}
+
+.hero-content h1 span {
+    color: var(--secondary);
+}
+
+.hero-content p {
+    color: var(--gray-3);
+    margin-bottom: var(--spacing-lg);
+}
+
+.hero-subheading {
+    font-family: var(--font-family-heading);
+    font-size: 1.5rem;
+    font-weight: var(--font-weight-semi-bold);
+    color: var(--white);
+    margin-bottom: var(--spacing-lg);
+}
+
+.hero-buttons {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.hero-image {
+    max-width: 40%;
+}
+
+.section-with-icon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing-lg);
+}
+
+.section-with-icon .icon {
+    font-size: 3rem;
+}
+.arrow {
+    display: inline-block;
+    width: 16px;  /* Adjust size */
+    height: 16px;
+    background-image: var(--arrow-down);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-left: 5px;
+    transition: transform 0.3s ease; /* Smooth rotation effect */
+}
+.flex {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.grid {
+    display: grid;
+    gap: var(--spacing-md);
+}
+
+/* 4. Buttons & Links */
+.btn {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: 1rem;
+    font-weight: var(--font-weight-semi-bold);
+    font-family: var(--font-family-body);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.btn--medium {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: 0.875rem;
+}
+
+.btn--small {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: 0.75rem;
+}
+
+.btn-primary {
+    background-color: var(--secondary);
+    color: var(--white);
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-hover);
+}
+
+.btn-primary:active {
+    background-color: var(--secondary);
+    transform: scale(0.95);
+}
+
+.btn-secondary {
+    background-color: var(--primary);
+    color: var(--secondary);
+    border: 2px solid var(--secondary);
+}
+
+.btn-secondary:hover {
+    background-color: var(--secondary);
+    color: var(--white);
+    border-color: var(--secondary);
+}
+
+.btn-secondary:active {
+    background-color: var(--secondary-hover);
+    color: var(--white);
+    border-color: var(--secondary-hover);
+    transform: scale(0.95);
+}
+
+.btn-icon-right::after {
+    margin-left: var(--spacing-sm);
+}
+
+.btn-icon-left::before {
+    margin-right: var(--spacing-sm);
+}
+
+.btn-icon-right--arrow-right::after {
+    content: '→';
+}
+
+.btn-icon-right--arrow-left::after {
+    content: '←';
+}
+
+.btn-icon-right--arrow-up::after {
+    content: '↑';
+}
+
+.btn-icon-right--arrow-down::after {
+    content: '↓';
+}
+
+.btn-icon-left--plus::before {
+    content: '+';
+}
+
+/* 5. Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary);
+    padding: 3px var(--screen-edge-spacing); 
+    height: 75px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08); /*I added this*/
+}
+
+.navbar-logo {
+    display: flex;
+    align-items: center; /* Vertically centers the logo */
+    justify-content: start; /* Aligns logo to the left */
+    height: 100%; /* Ensure it takes full navbar height */
+}
+.navbar-logo img {
+    max-height: 60px; /* Adjust based on Figma */
+    width: auto; /* Keep aspect ratio */
+    object-fit: contain; /* Ensures the logo scales properly */
+}
+.navbar-links {
+    display: flex;
+    align-items: center;
+    gap: 3rem; /* Adjust this value to control space between links */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+
+.navbar-links li {
+    position: relative;
+}
+
+.navbar-links li a {
+    color: var(--white);
+    transition: color 0.3s ease;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+}
+
+.navbar-links li a:hover {
+    color: var(--secondary);
+}
+
+.navbar-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--white);
+    padding: var(--spacing-md);
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    display: none;
+    width: var(--dropdown-width);
+    background-image: url('./icons/stFilesearch.svg');
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 300px; 
+    min-height: 200px;
+  }
+  
+  .navbar-links li:hover .navbar-dropdown {
+    display: block;
+  }
+  
+  .navbar-dropdown h4 {
+    font-family: 'OutfitRegular',sans-serif;
+    font-size: 1.125rem; /* 18px */
+    color: var(--gray-3);
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .navbar-dropdown ul { 
+    list-style: none;
+    padding: 0;
+  }
+  
+  .navbar-dropdown ul li {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin: var(--spacing-sm) 0;
+    position: relative;
+    padding: var(--spacing-xs) 0;
+  }
+  
+  .navbar-dropdown ul li:hover {
+    padding: var(--spacing-xs) var(--spacing-xs); /* Add 4px padding on left and right on hover */
+  }
+  
+  .navbar-dropdown ul li::before {
+    content: none;
+  }
+  
+  .navbar-dropdown ul li::after {
+    content: none; /* Hide the arrow by default */
+  }
+  
+  .navbar-dropdown ul li:hover::after {
+    content: none; /* Remove the arrow from the li on hover */
+  }
+  
+  .navbar-dropdown ul li:hover a::after {
+    content: '→'; /* Show the arrow on hover */
+    font-size: 1rem;
+    color: var(--gray-3); /* Gray arrow */
+    margin-left: var(--spacing-md); /* Add space between the text and arrow */
+  }
+  
+  .navbar-dropdown ul li .icon {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: var(--gray-1);
+    border-radius: 5px;
+  }
+  
+  .navbar-dropdown ul li:hover .icon {
+    background-color: var(--secondary); /* Change background to orange on hover */
+  }
+  
+  .navbar-dropdown ul li .icon--tactic1 {
+    background-image: url('./icons/icMaintainMultipleCopies.svg');
+  }
+  
+  .navbar-dropdown ul li .icon--tactic2 {
+    background-image: url('./icons/icIDPassword.svg');
+  }
+  
+  .navbar-dropdown ul li .icon--tactic3 {
+    background-image: url('./icons/icTheOnTimePassword.svg');
+  }
+  
+  .navbar-dropdown ul li .icon--tactic4 {
+    background-image: url('./icons/icMaintainData.svg');
+  }
+  
+  .navbar-dropdown ul li .tactic-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  
+  .navbar-dropdown ul li a {
+    font-size: 0.875rem; /* 14px */
+    color: var(--gray-4);
+    font-weight: var(--font-weight-regular);
+    text-decoration: none;
+    font-family: 'OutfitRegular',sans-serif;
+  }
+  
+  .navbar-dropdown ul li .dropdown-subtext {
+    font-size: 0.75rem; /* 12px */
+    color: var(--gray-3);
+    margin-top: 0px;
+  }
+
+.language-switcher {
+    font-family: 'OutfitRegular',sans-serif;
+    background-color: var(--primary);
+    border-color: var(--secondary);
+    color: var(--secondary);
+    border: 2px solid;
+    padding: 8px 16px;
+    border-radius: 15px;
+    font-size: 14px;
+    font-weight: var(--font-weight-regular);
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .language-switcher:hover {
+    background-color: var(--primary-hover); 
+    border-color:var(--secondary-hover) ;
+  }
+  
+  .language-switcher:active {
+    background-color: var(--primary-hover); 
+    border-color:var(--secondary-hover) ;
+    
+  }
+
+/* 6. Forms & Inputs */
+.dropzone {
+    border: 2px dashed var(--gray-3);
+    padding: var(--spacing-lg);
+    text-align: center;
+    border-radius: 5px;
+    background-color: var(--gray-1);
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.dropzone:hover {
+    border-color: var(--secondary);
+}
+
+.dropzone p {
+    font-size: 1rem;
+    color: var(--gray-4);
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+    border: 1px solid var(--gray-3);
+    border-radius: 5px;
+    font-family: var(--font-family-body);
+    font-size: 1rem;
+    color: var(--gray-4);
+    background-color: var(--white);
+    transition: border-color 0.3s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--secondary);
+    outline: none;
+}
+
+textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+/* 8. Animations & Transitions */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.slide-up {
+    transform: translateY(20px);
+    opacity: 0;
+    animation: slideUp 0.5s ease forwards;
+}
+
+@keyframes slideUp {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* 9. Footer */
+.footer {
+    background-color: var(--primary);
+    padding: var(--spacing-md) 0;
+    text-align: center;
+    color: var(--gray-3);
+    border-top: 1px solid var(--gray-4);
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+}
+
+.footer-links li a {
+    font-size: 0.875rem;
+    color: var(--gray-2);
+    transition: color 0.3s ease;
+}
+
+.footer-links li a:hover {
+    color: var(--secondary);
+}
+
+/* 10. Icons */
+.icon {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.icon--reliability {
+    width: 24px;
+    height: 24px;
+    background-image: url('./icons/stReliability.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.icon--performance {
+    width: 24px;
+    height: 24px;
+    background-image: url('./icons/stPerformance.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.icon--security {
+    width: 24px;
+    height: 24px;
+    background-image: url('./icons/stSecurities.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.icon--javacc {
+    width: 24px;
+    height: 24px;
+    background-image: url('./icons/icjavaplain.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.icon--power {
+    width: 24px;
+    height: 24px;
+    background-image: url('./icons/stPower.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.icon--availability {
+    width: 24px;
+    height: 24px;
+    background-image: url('./icons/stAvailable.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.icon-row {
+    display: flex;
+    justify-content: space-around;
+    gap: var(--spacing-md);
+    margin: var(--spacing-md) 0;
+}
+
+.icon-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.icon-item .icon {
+    width: 32px;
+    height: 32px;
+}
+
+.icon-item span {
+    font-size: 1rem;
+    color: var(--gray-3);
+}
+.icon--tactic1 {
+    width: 32px;
+    height: 32px;
+    background-image: url('./icons/icMaintainMultipleCopies.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: var(--gray-1);
+    border-radius: 10px;
+  }
+  
+  .icon--tactic2 {
+    width: 32px;
+    height: 32px;
+    background-image: url('./icons/icIDPassword.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 1000px;
+  }
+
+  .icon--tactic3 {
+    width: 32px;
+    height: 32px;
+    background-image: url('./icons/icTheOnTimePassword.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .icon--tactic4 {
+    width: 32px;
+    height: 32px;
+    background-image: url('./icons/icMaintainData.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+/* 11. Responsive Design */
+@media (max-width: 768px) {
+    .hamburger {
+      display: flex;
+    }
+  
+    .navbar-links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 75px;
+      left: 0;
+      width: 100%;
+      background-color: var(--primary);
+      padding: var(--spacing-md);
+      text-align: center;
+    }
+  
+    .navbar-links.active {
+      display: flex;
+    }
+  
+    .navbar-links li {
+      margin: var(--spacing-sm) 0;
+    }
+  
+    .navbar-links .dropdown .navbar-dropdown {
+      position: static;
+      transform: none;
+      width: 100%;
+      background-image: none; /* Remove background image on mobile for better readability */
+    }
+  
+    .language-switcher {
+      margin-top: var(--spacing-sm);
+    }
+  
+    /* Hamburger Animation */
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+  
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+  
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+  
+    /* Ensure fixed spacing on mobile */
+    .navbar {
+      padding: 3px var(--screen-edge-spacing);
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .container {
+        padding: 0 var(--spacing-md);
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-image {
+        max-width: 80%;
+        margin-top: var(--spacing-lg);
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .icon-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .section-with-icon {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .section-with-icon .icon {
+        margin-top: var(--spacing-md);
+    }
+}
+.colored-word{
+    color: #FCA311;
+}
+/* questionmark */
+#challenge{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left: 1075px;
+    top: 1380px;
+    transform: rotate(7.57deg);
+    }
+
+    @font-face {
+        font-family: 'OutfitRegular';
+        src: url('../fonts/OutfitRegular.ttf') format('truetype');
+        font-style: normal;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 44px;
+        opacity: 0.8;
+    }
+      
+      @font-face {
+        font-family: 'OutfitSemiBold';
+        src: url('../fonts/OutfitSemiBold.ttf') format('truetype');
+        font-weight: 600;
+        font-style: normal;
+        font-size: 24px;
+        line-height: 30px;
+    }
+      
+      
