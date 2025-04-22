@@ -1,9 +1,12 @@
+import React from 'react';
 import { Link } from "react-router-dom";
-import '../styles/Home.css'; // Import the dedicated Home.css
+import '../styles/Home.css';
 import heroImage from '../styles/icons/imHome.svg';
+
 export default function HomePage() {
   return (
     <div className="home">
+      {/* Hero Section */}
       <section className="hero">
         <div className="hero-content">
           <h1>
@@ -27,11 +30,72 @@ export default function HomePage() {
           </div>
         </div>
         <div className="hero-image">
-        <img
-           src={heroImage}
-           alt="Hero section"
-           style={{ width: "400px", height: "300px", objectFit: "cover" }}
-            />
+          <img
+            src={heroImage}
+            alt="Hero section"
+            style={{ width: "400px", height: "300px", objectFit: "cover" }}
+          />
+        </div>
+      </section>
+
+      {/* Architectural Tactics Section */}
+      <section className="tactics-section">
+        <div className="tactics-section-inner">
+          {/* Title Sub-Section */}
+          <div className="tactics-title-section">
+            <h2 className="tactics-title">Architectural Tactics</h2>
+          </div>
+
+          {/* First Row: 3 Tactic Cards */}
+          <div className="tactics-row">
+            <Link to="/tactics/id-password" className="tactic-card">
+              <div className="tactic-icon id-password-icon"></div>
+              <h3 className="tactic-name">ID PASSWORD</h3>
+              <p className="tactic-description">
+                A simple and widely used authentication method where users enter a unique ID and password to gain access to a system.
+              </p>
+              <span className="learn-more">Learn More →</span>
+            </Link>
+
+            <Link to="/tactics/maintain-data-confidentiality" className="tactic-card">
+              <div className="tactic-icon maintain-data-icon"></div>
+              <h3 className="tactic-name">MAINTAIN DATA CONFIDENTIALITY</h3>
+              <p className="tactic-description">
+                A security tactic that ensures sensitive information is only accessible to authorized users by using encryption and controlled access mechanisms.
+              </p>
+              <span className="learn-more">Learn More →</span>
+            </Link>
+
+            <Link to="/tactics/maintain-multiple-copies" className="tactic-card">
+              <div className="tactic-icon maintain-copies-icon"></div>
+              <h3 className="tactic-name">MAINTAIN MULTIPLE COPIES</h3>
+              <p className="tactic-description">
+                Reliable data redundancy technique where multiple copies of data are stored across different locations or systems to ensure availability and fault tolerance in case of failure.
+              </p>
+              <span className="learn-more">Learn More →</span>
+            </Link>
+          </div>
+
+          {/* Second Row: 2 Tactic Cards */}
+          <div className="tactics-row">
+            <Link to="/tactics/one-time-password" className="tactic-card">
+              <div className="tactic-icon one-time-password-icon"></div>
+              <h3 className="tactic-name">THE ONETIME PASSWORD</h3>
+              <p className="tactic-description">
+                A secure authentication method where users are granted temporary access through a unique, time-sensitive code sent to them, typically via email or SMS, for one-time use only.
+              </p>
+              <span className="learn-more">Learn More →</span>
+            </Link>
+
+            <Link to="/tactics/ping-echo" className="tactic-card">
+              <div className="tactic-icon ping-echo-icon"></div>
+              <h3 className="tactic-name">PING-ECHO</h3>
+              <p className="tactic-description">
+                A basic availability-checking method where one component sends a "ping" message to another, which replies with an "echo" to confirm it is active and responsive.
+              </p>
+              <span className="learn-more">Learn More →</span>
+            </Link>
+          </div>
         </div>
       </section>
     </div>

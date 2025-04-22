@@ -1,103 +1,262 @@
 .home {
-    min-height: 100vh; /* Full viewport height */
-    background-color: var(--primary); /* Dark blue background */
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero {
+  min-height: 100vh;
+  background-color: var(--primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3vw 5vw;
+}
+
+.hero-content {
+  max-width: 70%;
+}
+
+.hero h1 {
+  font-size: 4.5rem;
+  color: var(--white);
+  font-weight: var(--font-weight-semi-bold);
+  line-height: 1.2;
+  margin-bottom: 2rem;
+}
+
+.hero h1 span {
+  color: var(--secondary);
+}
+
+.hero-description {
+  font-size: 24px;
+  font-family: 'OutfitSemiBold', sans-serif;
+  color: var(--gray-2);
+  margin-bottom: 1rem;
+}
+
+.hero-subdescription {
+  font-size: 24px;
+  font-family: 'OutfitSemiBold', sans-serif;
+  color: var(--gray-2);
+  margin-bottom: 2rem;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.hero-image {
+  max-width: 30%;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Button Styles */
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: var(--font-weight-regular);
+  font-family: 'OutfitRegular', sans-serif;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.btn-primary {
+  background-color: var(--secondary);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background-color: var(--secondary-hover);
+  color: var(--white);
+}
+
+.btn-secondary {
+  background-color: var(--primary);
+  color: var(--secondary);
+  border: 1px solid var(--secondary);
+}
+
+.btn-secondary:hover {
+  background-color: var(--secondary);
+  color: var(--white);
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+.btn-icon {
+  font-size: 1rem;
+}
+
+/* Architectural Tactics Section */
+.tactics-section {
+  background-color: #f9f9f9;
+  padding: 3vw 0; /* Removed side padding, only top/bottom */
+  width: 100%; /* Ensure it spans the full viewport width */
+}
+
+.tactics-section-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 5vw; /* Side padding for content */
+}
+
+.tactics-title-section {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.tactics-title {
+  font-size: 2.5rem;
+  color: var(--secondary);
+  font-weight: var(--font-weight-semi-bold);
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  font-family: 'OutfitSemiBold', sans-serif;
+}
+
+.tactics-row {
+  display: flex;
+  justify-content: center;
+  gap: 2vw;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.tactic-card {
+  background-color: var(--white);
+  border: none;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  text-decoration: none;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 15vw;
+  min-width: 200px;
+  max-width: 250px;
+  height: 300px;
+}
+
+.tactic-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  background-color: #2C3E50;
+}
+
+/* Change text colors on hover for contrast */
+.tactic-card:hover .tactic-name,
+.tactic-card:hover .tactic-description,
+.tactic-card:hover .learn-more {
+  color: var(--white);
+}
+
+.tactic-icon {
+  width: 5vw;
+  min-width: 80px;
+  max-width: 100px;
+  height: 5vw;
+  min-height: 80px;
+  max-height: 100px;
+  margin: 1rem 0 1.5rem 0;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.id-password-icon {
+  background-image: url('../styles/icons/id-password-icon.svg');
+}
+
+.maintain-data-icon {
+  background-image: url('../styles/icons/maintain-data-icon.svg');
+}
+
+.maintain-copies-icon {
+  background-image: url('../styles/icons/maintain-copies-icon.svg');
+}
+
+.one-time-password-icon {
+  background-image: url('../styles/icons/one-time-password-icon.svg');
+}
+
+.ping-echo-icon {
+  background-image: url('../styles/icons/ping-echo-icon.svg');
+}
+
+.tactic-name {
+  font-size: 1.125rem;
+  color: var(--primary);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'OutfitSemiBold', sans-serif;
+}
+
+.tactic-description {
+  font-size: 0.875rem;
+  color: var(--gray-2);
+  text-align: justify;
+  margin-bottom: 1.5rem;
+  font-family: 'OutfitRegular', sans-serif;
+  line-height: 1.4;
+}
+
+.learn-more {
+  font-size: 0.75rem;
+  color: var(--secondary);
+  font-weight: var(--font-weight-regular);
+  text-decoration: none;
+  font-family: 'OutfitRegular', sans-serif;
+}
+
+/* Media Queries for Laptop Screens */
+@media (min-width: 1024px) and (max-width: 1280px) {
+  .tactic-card {
+    width: 18vw;
   }
-  
-  .hero {
-    flex: 1; /* Take up remaining space */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: var(--spacing-lg) var(--screen-edge-spacing);
-    
+
+  .tactic-icon {
+    width: 6vw;
+    height: 6vw;
   }
-  
-  .hero-content {
-    max-width: 70%; /* Left column for text */
+}
+
+@media (min-width: 1281px) and (max-width: 1440px) {
+  .tactic-card {
+    width: 16vw;
   }
-  
-  .hero h1 {
-    font-size: 4,5rem; 
-    color: var(--white);
-    font-weight: var(--font-weight-semi-bold); /* 600 */
-    line-height: 1.2;
-    margin-bottom: var(--spacing-md); /* 16px */
+
+  .tactic-icon {
+    width: 5.5vw;
+    height: 5.5vw;
   }
-  
-  .hero h1 span {
-    color: var(--secondary); /* Orange for "Architectural Tactics" */
+}
+
+@media (min-width: 1441px) {
+  .tactic-card {
+    width: 14vw;
   }
-  
-  .hero-description {
-    font-size: 24px; 
-    font-family: 'OutfitSemiBold',sans-serif;
-    color: var(--gray-2);
-    margin-bottom: var(--spacing-sm); /* 8px */
+
+  .tactic-icon {
+    width: 5vw;
+    height: 5vw;
   }
-  
-  .hero-subdescription {
-    font-size: 24px; 
-    font-family: 'OutfitSemiBold',sans-serif;
-    color: var(--gray-2); /* Lighter gray */
-    margin-bottom: var(--spacing-lg); /* 24px */
-  }
-  
-  .hero-buttons {
-    display: flex;
-    gap: var(--spacing-md); /* 16px gap between buttons */
-  }
-  
-  .hero-image {
-    max-width: 30%; /* Right column for image */
-  }
-  
-  .hero-image div {
-    width: 400px;
-    height: 300px;
-    background-color: #BDBDBD; /* Placeholder */
-  }
-  
-  /* Button Styles */
-  .btn {
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-xs); /* 4px gap between text and arrow */
-    padding: var(--spacing-sm) var(--spacing-md); /* 8px 16px */
-    border-radius: 5px;
-    font-size: 1rem; /* 16px */
-    font-weight: var(--font-weight-regular); 
-    font-family: 'OutfitRegular',sans-serif;
-    text-decoration: none;
-    transition: background-color 0.3s ease, transform 0.1s ease; /* Smooth transitions for hover and click */
-  }
-  
-  .btn-primary {
-    background-color: var(--secondary); /* Orange */
-    color: var(--white);
-  }
-  
-  .btn-primary:hover {
-    background-color: var(--secondary-hover); /* Lighter orange */
-    color: var(--white);
-  }
-  
-  .btn-secondary {
-    background-color: var(--primary); /* Dark blue */
-    color: var(--secondary); /* Orange text */
-    border: 1px solid var(--secondary); /* Orange border */
-  }
-  
-  .btn-secondary:hover {
-    background-color: var(--secondary); /* Orange background */
-    color: var(--white);
-  }
-  
-  .btn:active {
-    transform: scale(0.95); /* Scale down on click */
-  }
-  
-  .btn-icon {
-    font-size: 1rem;
-  }
+}
