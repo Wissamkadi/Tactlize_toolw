@@ -104,19 +104,19 @@
 /* Architectural Tactics Section */
 .tactics-section {
   background-color: #f9f9f9;
-  padding: 3vw 0; /* Removed side padding, only top/bottom */
-  width: 100%; /* Ensure it spans the full viewport width */
+  padding: 5vw 0;
+  width: 100%;
 }
 
 .tactics-section-inner {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 5vw; /* Side padding for content */
+  padding: 0 5vw;
 }
 
 .tactics-title-section {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
 }
 
 .tactics-title {
@@ -131,8 +131,8 @@
 .tactics-row {
   display: flex;
   justify-content: center;
-  gap: 2vw;
-  margin-bottom: 3rem;
+  gap: 2.5rem;
+  margin-bottom: 4rem;
   flex-wrap: wrap;
 }
 
@@ -140,23 +140,21 @@
   background-color: var(--white);
   border: none;
   border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
   text-decoration: none;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 15vw;
-  min-width: 200px;
-  max-width: 250px;
-  height: 300px;
+  width: 300px;
+  height: 350px;
 }
 
 .tactic-card:hover {
   transform: scale(1.05);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); /* Slightly more pronounced shadow on hover */
   background-color: #2C3E50;
 }
 
@@ -168,20 +166,16 @@
 }
 
 .tactic-icon {
-  width: 5vw;
-  min-width: 80px;
-  max-width: 100px;
-  height: 5vw;
-  min-height: 80px;
-  max-height: 100px;
-  margin: 1rem 0 1.5rem 0;
+  width: 100px;
+  height: 100px;
+  margin: 1rem 0 2rem 0; /* Increased bottom margin for better spacing */
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .id-password-icon {
-  background-image: url('../styles/icons/id-password-icon.svg');
+  background-image: url('../styles/icons/id-password-icon.svg'); /* Adjusted path */
 }
 
 .maintain-data-icon {
@@ -204,7 +198,7 @@
   font-size: 1.125rem;
   color: var(--primary);
   font-weight: var(--font-weight-bold);
-  margin-bottom: 1rem;
+  margin-bottom: 1rem; /* Increased spacing */
   text-align: center;
   text-transform: uppercase;
   font-family: 'OutfitSemiBold', sans-serif;
@@ -213,10 +207,10 @@
 .tactic-description {
   font-size: 0.875rem;
   color: var(--gray-2);
-  text-align: justify;
-  margin-bottom: 1.5rem;
+  text-align: left;
   font-family: 'OutfitRegular', sans-serif;
   line-height: 1.4;
+  margin-bottom: 1.5rem; /* Increased spacing */
 }
 
 .learn-more {
@@ -227,36 +221,120 @@
   font-family: 'OutfitRegular', sans-serif;
 }
 
-/* Media Queries for Laptop Screens */
-@media (min-width: 1024px) and (max-width: 1280px) {
-  .tactic-card {
-    width: 18vw;
-  }
+/* Media Queries for Responsiveness */
 
-  .tactic-icon {
-    width: 6vw;
-    height: 6vw;
-  }
-}
-
-@media (min-width: 1281px) and (max-width: 1440px) {
-  .tactic-card {
-    width: 16vw;
-  }
-
-  .tactic-icon {
-    width: 5.5vw;
-    height: 5.5vw;
-  }
-}
-
+/* Larger Laptop Screens (1441px and above) */
 @media (min-width: 1441px) {
   .tactic-card {
-    width: 14vw;
+    width: 300px;
+    height: 350px;
   }
 
   .tactic-icon {
-    width: 5vw;
-    height: 5vw;
+    width: 100px;
+    height: 100px;
+  }
+}
+
+/* Medium Laptop Screens (1024px to 1440px) */
+@media (min-width: 1024px) and (max-width: 1440px) {
+  .tactic-card {
+    width: 250px;
+    height: 300px;
+  }
+
+  .tactic-icon {
+    width: 80px;
+    height: 80px;
+  }
+
+  .tactic-name {
+    font-size: 1rem;
+  }
+
+  .tactic-description {
+    font-size: 0.75rem;
+  }
+
+  .learn-more {
+    font-size: 0.625rem;
+  }
+
+  .tactics-row {
+    gap: 2rem;
+  }
+}
+
+/* Smaller Laptop Screens (768px to 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .tactic-card {
+    width: 220px;
+    height: 280px;
+  }
+
+  .tactic-icon {
+    width: 70px;
+    height: 70px;
+  }
+
+  .tactic-name {
+    font-size: 0.875rem;
+  }
+
+  .tactic-description {
+    font-size: 0.6875rem;
+  }
+
+  .learn-more {
+    font-size: 0.625rem;
+  }
+
+  .tactics-row {
+    gap: 1.5rem;
+  }
+}
+
+/* Phone Screens (below 768px) */
+@media (max-width: 767px) {
+  .tactics-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .tactic-card {
+    width: 90%;
+    max-width: 300px;
+    height: auto;
+    padding: 1.5rem;
+  }
+
+  .tactic-icon {
+    width: 80px;
+    height: 80px;
+  }
+
+  .tactic-name {
+    font-size: 1rem;
+  }
+
+  .tactic-description {
+    font-size: 0.75rem;
+  }
+
+  .learn-more {
+    font-size: 0.625rem;
+  }
+
+  .tactics-title {
+    font-size: 2rem;
+  }
+
+  .tactics-section {
+    padding: 8vw 0;
+  }
+
+  .tactics-section-inner {
+    padding: 0 5vw;
   }
 }

@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
 import JavaCCDetailsPage from "./pages/JavaCCDetailsPage";
 import AboutPage from "./pages/AboutPage";
-import ContactPage from "./pages/ContactPage";
+import ContactUsPage from "./pages/ContactUsPage";
 import UploadPage from "./pages/UploadPage";
 import ResultsPage from "./pages/ResultsPage";
 import IDPasswordPage from "./pages/IDPasswordPage";
@@ -22,7 +22,7 @@ function App() {
         <Route path="/IDPassword" element={<IDPasswordPage />} />
         <Route path="/MaintainData" element={<MaintainDataPage />} />
         <Route path="/OneTime" element={<OneTimePage />} />
-        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/contact" element={<ContactUsPage />} />
         <Route path="/upload" element={<UploadPage />} />
         <Route path="/results" element={<ResultsPage />} />
       </Routes>
