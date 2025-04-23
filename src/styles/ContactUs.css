@@ -1,5 +1,14 @@
-/* Import fonts */
-@font-face {
+/* Override global body background */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--primary); /* Set to #14213D to match the design */
+  }
+  
+  /* Import fonts */
+  @font-face {
     font-family: 'OutfitRegular';
     src: url('../fonts/OutfitRegular.ttf') format('truetype');
     font-style: normal;
@@ -20,11 +29,12 @@
     font-weight: 400;
   }
   
-  /* Container with full width and padding for responsiveness */
+  /* Container with full width and fixed padding */
   .container {
     width: 100%;
+    max-width: none; /* Override global max-width */
     margin: 0;
-    padding: 0 5%; /* Percentage-based padding for responsiveness */
+    padding: 0 var(--screen-edge-spacing); /* Fixed 75px padding from global variables */
     background: var(--primary);
     display: flex;
     flex-direction: column;
