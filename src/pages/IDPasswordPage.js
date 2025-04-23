@@ -10,7 +10,6 @@ return(
   <div className='IDPassword-page'>
    <section className="section">
     <div className="section-content">
-        <br></br>
       <h1 className="section-title">The ID/Password <span className='colored-word'>Tactic</span></h1>
       <h4 className="section-tagline">Secure Access, Verified Identity</h4>
       <h2 className="section-subtitle">Introduction to the Tactic</h2>
@@ -34,18 +33,26 @@ return(
       </p>
       </div>
       </section>
+
       <section className="section">
-      <div className="section-content">
-      <h2 className="section-subtitle">How It Works?</h2>
+  <div className="section-content">
+    <h2 className="section-subtitle">How It Works?</h2>
+    <div className="image-text-row">
+      <div className="text-column">
       <p>
-      <span className="highlight">User Input:</span> The user enters their ID and password.<br></br>
-      <span className="highlight">Verification:</span> The system checks if the credentials match<br></br> the stored data.<br></br>
-      <span className="highlight">Access Decision:</span> If correct → User is granted access.<br></br> If not, Access is denied.<br></br>
-      <span className="highlight">(Optional) Additional Security Measures:</span> Systems <br></br>may lock the account after multiple failed attempts or <br></br>require CAPTCHA verification.
+      <span className="highlight">User Input:</span> The user enters their ID and password.
+      <span className="highlight">Verification:</span> The system checks if the credentials match the stored data.
+      <span className="highlight">Access Decision:</span> If correct → User is granted access.If not, Access is denied.
+      <span className="highlight">(Optional) Additional Security Measures:</span> Systems may lock the account after multiple failed attempts or require CAPTCHA verification.
       </p>
       </div>
-   </section>
-   <img src={IDPassword} alt='idpassword-tactic' id='idpassword'></img>
+      <div className="image-column">
+      <img src={IDPassword} alt='idpassword-tactic' id='idpassword'></img>
+      </div>
+    </div>
+  </div>
+</section>
+
    <div className="card2">
     <h4>Trade-offs & Challenges</h4>
    <p>
@@ -55,7 +62,7 @@ return(
     <img src={challenge} alt='challenge' id='challenge'></img>
     <div>
     <Link to="/upload" className="btn2 btn-primary">
-    Uplaod your trace and detect the architectural tactic
+    Start Detecting
     <span className="btn-icon">→</span>
     </Link>
     </div>

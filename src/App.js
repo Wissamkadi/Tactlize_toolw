@@ -6,10 +6,13 @@ import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import UploadPage from "./pages/UploadPage";
 import ResultsPage from "./pages/ResultsPage";
+import MaintainMCopiesPage from "./pages/MaintainMCopiesPage";
 import IDPasswordPage from "./pages/IDPasswordPage";
-import './styles/global.css';
 import MaintainDataPage from "./pages/MaintainDataPage";
 import OneTimePage from "./pages/OneTimePage";
+import PingEchoPage from "./pages/PingEchoPage";
+import './styles/global.css';
+
 
 function App() {
   return (
@@ -19,9 +22,11 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/javaccdetails" element={<JavaCCDetailsPage />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/MaintainMCopies" element={<MaintainMCopiesPage />} />
         <Route path="/IDPassword" element={<IDPasswordPage />} />
         <Route path="/MaintainData" element={<MaintainDataPage />} />
         <Route path="/OneTime" element={<OneTimePage />} />
+        <Route path="/PingEcho" element={<PingEchoPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/upload" element={<UploadPage />} />
         <Route path="/results" element={<ResultsPage />} />

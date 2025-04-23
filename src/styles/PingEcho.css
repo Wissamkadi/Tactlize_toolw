@@ -1,0 +1,156 @@
+/* Ensures full-page height and colors */
+.PingEcho-page {
+  min-height: 100vh;
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+h1 {
+  margin-top: 40px !important;
+}
+
+h2 {
+  margin-bottom: -15px !important;
+}
+
+#ul1 {
+  margin-left: 20px !important;
+}
+
+p {
+  font-family: 'OutfitRegular', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 44px;
+  color: var(--gray-1);
+  order: 1;
+  align-self: stretch;
+  margin-bottom: 2px !important;
+}
+
+.section-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 18px;
+}
+
+.highlight {
+  color: white;
+  opacity: 0.7;
+}
+
+.highlightB {
+  color: white;
+}
+
+.section {
+  padding: var(--spacing-lg) var(--screen-edge-spacing);
+  padding-top: 0rem;
+  padding-bottom: 0rem;
+}
+
+.section.intro-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section-subtitle {
+  font-size: 1.75rem;
+  color: var(--secondary);
+  font-weight: var(--font-weight-semi-bold);
+  margin-bottom: var(--spacing-sm);
+  padding-left: var(--spacing-sm);
+}
+
+.section-title {
+  font-size: 3rem;
+  color: var(--white);
+  font-weight: var(--font-weight-semi-bold);
+  margin-bottom: var(--spacing-2xs);
+  padding-left: var(--spacing-lg);
+}
+
+/* -------- "How It Works?" Layout -------- */
+.image-text-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+
+  width: 1080px;        /* Fixed desktop width */
+  margin: 0 auto;       /* Center the row */
+}
+
+.text-column {
+  width: 50%;           /* Equal width */
+}
+
+.image-column {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.image-column img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Remove mobile layout override — disable wrapping */
+@media (max-width: 900px) {
+  /* REMOVE THIS IF YOU WANT FIXED LAYOUT ON PCS ONLY */
+  /* Or keep if you want responsiveness for phones */
+}
+
+/* ---------------------------------------- */
+
+.card5 {
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  color: var(--gray-1);
+  box-shadow: 4px 4px 18px rgba(255, 255, 255, 0.15);
+  border-radius: 30px;
+  background: rgba(189, 189, 189, 0.19);
+  width: 1080px;
+  height: 200px;
+  margin: 20px auto; /* Centered card */
+}
+
+.btn2 {
+  display: flex;
+  align-items: center;
+  font-family: 'OutfitRegular', sans-serif;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: var(--font-weight-regular);
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+  width: 425px;
+  height: 50px;
+  margin: 20px auto; /* Centered button */
+}
+
+.btn-primary {
+  background-color: var(--secondary);
+  color: var(--white);
+}
+
+.btn-icon {
+  font-size: 1rem;
+}
+
+#challenge3 {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  left: 86%;
+  top: 212%;
+  transform: rotate(7.57deg);
+}
