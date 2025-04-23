@@ -3,7 +3,8 @@ import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
 import JavaCCDetailsPage from "./pages/JavaCCDetailsPage";
 import AboutPage from "./pages/AboutPage";
-import ContactPage from "./pages/ContactPage";
+import ContactUsPage from "./pages/ContactUsPage";
+import ContactUsPageResult from "./pages/ContactUsPageResult";
 import UploadPage from "./pages/UploadPage";
 import ResultsPage from "./pages/ResultsPage";
 import MaintainMCopiesPage from "./pages/MaintainMCopiesPage";
@@ -27,7 +28,8 @@ function App() {
         <Route path="/MaintainData" element={<MaintainDataPage />} />
         <Route path="/OneTime" element={<OneTimePage />} />
         <Route path="/PingEcho" element={<PingEchoPage />} />
-        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/contact" element={<ContactUsPage />} />
+        <Route path="/ContactUs" element={<ContactUsPageResult/>} />
         <Route path="/upload" element={<UploadPage />} />
         <Route path="/results" element={<ResultsPage />} />
       </Routes>
