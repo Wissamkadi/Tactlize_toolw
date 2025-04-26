@@ -1,34 +1,29 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import '../styles/Home.css';
-import heroImage from '../styles/icons/imHome.svg';
+import '../styles/ContactUsResult.css';
+import '../styles/global.css';
+import ContactUsResult from '../styles/icons/ContactUsResult.svg';
 
-export default function HomePage() {
+export default function ContactUsResultPage() {
   return (
-    <div className="home">
-      {/* Hero Section */}
-      <section className="hero">
-        <div className="hero-content">
-          <h2>
-            Detect <span>Reach Out to the</span> JavaCC Parser Team
-          </h2>
-          <p className="hero-description">
-          Thank you for contacting us! Your message has been successfully sent. We’ll get back to you as soon as possible.  
+    <div className="contact-result-container">
+      <div className="contact-result-content">
+        <div className="contact-result-text">
+          <h1>
+            Reach Out to the <span>JavaCC Parser Team</span>
+          </h1>
+          <p>
+            Thank you for contacting us! Your message has been successfully sent.
+            We’ll get back to you as soon as possible.
           </p>
-          <div className="hero-buttons">
-            <Link to="/ContactUs" className="btn btn-primary">
+          <Link to="/contact" className="btn4">
             Send another message
-              <span className="btn-icon">→</span>
-            </Link>
-          </div>
+          </Link>
         </div>
-        <div className="hero-image">
-          <img
-            src={ContactUsResult}
-            alt="ContactUsResult"
-          />
+        <div className="contact-result-image">
+          <img src={ContactUsResult} alt="Contact Us Result" />
         </div>
-      </section>
+      </div>
     </div>
   );
 }

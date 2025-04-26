@@ -8,7 +8,7 @@ const ContactUsPage = () => {
       field.value = '';
     });
   };
-
+  
   return (
     <>
       <div className="container">
@@ -49,8 +49,10 @@ const ContactUsPage = () => {
             <p>Thank you for reaching out! Upon submitting, we will promptly review your message and get back to you as soon as possible. We appreciate your trust and look forward to assisting you.</p>
           </div>
           <div className="buttons">
-            <button className="btn btn-primary submit">Submit</button>
-            <button className="btn btn-secondary clear" onClick={handleClear}>Clear All</button>
+          <Link to="/ContactUsResult" className="btn btn-primary submit">
+            Submit
+          </Link>  
+          <button className="btn btn-secondary clear" onClick={handleClear}>Clear All</button>
           </div>
         </section>
       </div>

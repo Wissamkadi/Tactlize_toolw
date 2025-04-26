@@ -391,6 +391,13 @@ a:hover {
   .navbar-links li:hover .navbar-dropdown {
     display: block;
   }
+
+  .navbar.scrolled li a {
+    color: black;
+  }
+  .navbar.scrolled .navbar-links li a:hover {
+    color: var(--secondary);
+}
   
   .navbar-dropdown h4 {
     font-family: 'OutfitRegular',sans-serif;

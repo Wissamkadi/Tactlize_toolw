@@ -80,7 +80,7 @@ export default function Navbar() {
               <li>
                 <div className="icon icon--tactic3"></div>
                 <div className="tactic-content">
-                  <Link to="OneTime">The one time password Tactic</Link>
+                  <Link to="/OneTime">The one time password Tactic</Link>
                   <span className="dropdown-subtext">One-Time Pass, Full-Time Security</span>
                 </div>
               </li>

@@ -29,7 +29,7 @@ function App() {
         <Route path="/OneTime" element={<OneTimePage />} />
         <Route path="/PingEcho" element={<PingEchoPage />} />
         <Route path="/contact" element={<ContactUsPage />} />
-        <Route path="/ContactUs" element={<ContactUsPageResult/>} />
+        <Route path="/ContactUsResult" element={<ContactUsPageResult/>} />
         <Route path="/upload" element={<UploadPage />} />
         <Route path="/results" element={<ResultsPage />} />
       </Routes>
