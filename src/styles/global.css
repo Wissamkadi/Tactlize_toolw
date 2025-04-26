@@ -17,9 +17,9 @@
     --success: #2E7D31;
 
     /* Typography */
-    --font-family-navbar: 'OutfitRegular',sans-serif;
-    --font-family-heading: 'OutfitSemiBold', sans-serif;
-    --font-family-body: 'OutfitRegular' sans-serif;
+    --font-family-navbar: 'OutfitRegular';
+    --font-family-heading: 'OutfitSemiBold';
+    --font-family-body: 'OutfitRegular' ;
     --font-size-base: 24px;
     --font-weight-regular: 400;
     --font-weight-semi-bold: 600;

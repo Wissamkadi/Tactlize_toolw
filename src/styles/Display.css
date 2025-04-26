@@ -1,0 +1,308 @@
+.display-page {
+  background-color: var(--primary); /* #1e2a44 */
+  min-height: 100vh;
+  color: var(--white);
+  font-family: 'OutfitRegular', sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3% 5%;
+}
+
+/* Title Section */
+.title-section {
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  margin-bottom: 3rem;
+}
+
+.main-title {
+  font-size:50px; /* 64px */
+  font-weight: var(--font-weight-semi-bold);
+  text-align: left;
+  font-family: 'OutfitSemiBold';
+  line-height: 1.2;
+}
+
+.main-title .highlighted {
+  color: var(--secondary); /* Orange */
+}
+
+/* Upload Section */
+.upload-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.upload-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem; /* 16px */
+}
+
+.upload-icon {
+  width: 130px;
+  height: 115px;
+  background-image: url('../styles/icons/ic-upload.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  order: 1; /* Ensure icon is first */
+}
+
+.upload-text {
+  font-size: 1.25rem; /* 20px */
+  font-family: 'OutfitRegular';
+  color: var(--white);
+  order: 2; /* Ensure text is second */
+  margin: 0; /* Remove any default margins that might affect positioning */
+}
+
+.upload-btn {
+  background-color: var(--secondary); /* #FCA411 */
+  color: var(--white);
+  width: 210px;
+  height: 60px;
+  border: none;
+  border-radius: 12px;
+  font-size: 2rem;
+  cursor: pointer;
+  font-family: 'OutfitSemiBold';
+  padding: 0 17px 0 95px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  order: 3; /* Ensure button is last */
+}
+
+.upload-btn:hover {
+  background-color: var(--secondary-hover);
+}
+
+/* Guideline Grid Section */
+.guideline-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.upload-info {
+  display: flex;
+  justify-content: center;
+  gap: 30px; /* Figma gap for big frame */
+  flex-wrap: wrap;
+  padding: 0; /* Figma padding */
+  border: none; /* No border per Figma */
+  border-radius: 0;
+  width: 100%;  
+  height: 171px; /* Figma height */
+  box-sizing: border-box;
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  width: 330px; /* Figma width for each group */
+  height: 69px; /* Figma height for each group */
+  gap: 10px; /* Figma gap between icon and text */
+}
+
+.info-icon {
+  width: 30px; /* Figma width */
+  height: 30px; /* Figma height */
+  margin-top: 8px; /* Figma Y position */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.display-page .icon--accepted-file {
+  background-image: url('../styles/icons/ic-accepted-file.svg');
+}
+
+.display-page .icon--required-format {
+  background-image: url('../styles/icons/ic-required-format.svg');
+}
+
+.display-page .icon--file-preparation {
+  background-image: url('../styles/icons/ic-file-preparation.svg');
+}
+
+.display-page .icon--document-control {
+  background-image: url('../styles/icons/ic-document-control.svg');
+}
+
+.display-page .icon--automatic-deletion {
+  background-image: url('../styles/icons/ic-automatic-deletion.svg');
+}
+
+.display-page .icon--privacy-assurance {
+  background-image: url('../styles/icons/ic-privacy-assurance.svg');
+}
+
+.info-item p {
+  width: 290px; /* Figma width */
+  height: 69px; /* Figma height */
+  margin-top: 3px; /* Figma Y position */
+  font-size: 18px; /* Figma font size */
+  line-height: 1; /* Figma line height matches font size */
+  text-align: left;
+  color: var(--white);
+}
+
+.info-item .info-title {
+  color: var(--secondary);
+  font-weight: var(--font-weight-semi-bold);
+  font-family: 'OutfitSemiBold', sans-serif;
+  font-size: 18px; /* Figma font size */
+}
+
+/* Media Queries for Responsiveness */
+
+/* Medium Laptop Screens (1024px to 1440px) */
+@media (min-width: 1024px) and (max-width: 1440px) {
+  .main-title {
+    font-size: 3.125rem; /* 50px */
+  }
+
+  .upload-text {
+    font-size: 1.25rem; /* 20px */
+  }
+
+  .upload-btn {
+    padding: 0.6rem 1.5rem;
+    font-size: 1.25rem;
+  }
+
+  .upload-info {
+    gap: 30px; 
+    width: 100%;
+    height: auto;
+  }
+
+  .info-item {
+    width: 330px; /* Scaled down proportionally */
+    height: 69px;
+    gap: 10px; /* Scaled down */
+  }
+
+  .info-icon {
+    width: 30px; /* Scaled down */
+    height: 30px;
+    margin-top: 8px; /* Scaled down */
+  }
+
+  .info-item p {
+    width: 290px; /* Scaled down */
+    height: 69px;
+    margin-top: 3px; /* Scaled down */
+    font-size: 18px; /* Scaled down */
+  }
+
+  .info-item .info-title {
+    font-size: 18px; /* Scaled down */
+  }
+}
+
+/* Smaller Laptop Screens (768px to 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .main-title {
+    font-size: 3rem; /* 48px */
+  }
+
+  .upload-text {
+    font-size: 1rem; /* 16px */
+  }
+
+  .upload-btn {
+    padding: 0.5rem 1.5rem;
+    font-size: 0.875rem; /* 14px */
+  }
+
+  .upload-info {
+    gap: 15px; /* Further reduced gap */
+    width: 95%;
+    height: auto;
+  }
+
+  .info-item {
+    width: 250px; /* Scaled down */
+    height: 55px;
+    gap: 6px; /* Scaled down */
+  }
+
+  .info-icon {
+    width: 24px; /* Scaled down */
+    height: 24px;
+    margin-top: 5px; /* Scaled down */
+  }
+
+  .info-item p {
+    width: 220px; /* Scaled down */
+    height: 55px;
+    margin-top: 1px; /* Scaled down */
+    font-size: 14px; /* Scaled down */
+  }
+
+  .info-item .info-title {
+    font-size: 14px; /* Scaled down */
+  }
+}
+
+/* Phone Screens (below 768px) */
+@media (max-width: 767px) {
+  .main-title {
+    font-size: 2rem; /* 32px */
+  }
+
+  .upload-text {
+    font-size: 0.875rem; /* 14px */
+  }
+
+  .upload-btn {
+    padding: 0.5rem 1.5rem;
+    font-size: 0.875rem; /* 14px */
+  }
+
+  .upload-info {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    height: auto;
+  }
+
+  .info-item {
+    width: 90%; /* Full width for stacking */
+    height: auto;
+    gap: 5px; /* Scaled down */
+  }
+
+  .info-icon {
+    width: 20px; /* Scaled down */
+    height: 20px;
+    margin-top: 4px; /* Scaled down */
+  }
+
+  .info-item p {
+    width: 100%; /* Full width for stacking */
+    height: auto;
+    margin-top: 0; /* Adjusted for stacking */
+    font-size: 12px; /* Scaled down */
+  }
+
+  .info-item .info-title {
+    font-size: 12px; /* Scaled down */
+  }
+}

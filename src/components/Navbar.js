@@ -9,6 +9,7 @@ export default function Navbar() {
   const toggleLanguage = () => {
     setLanguage(language === "EN/FR" ? "FR/EN" : "EN/FR");
   };
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -37,16 +38,16 @@ export default function Navbar() {
       {/* Navbar Links */}
       <ul className={`navbar-links ${isMenuOpen ? "active" : ""}`}>
         <li>
-          <Link to="/"> <nav>  Home  </nav></Link>
+          <Link to="/"><nav>Home</nav></Link>
         </li>
         <li>
-          <Link to="/about"><nav>  About  </nav></Link>
+          <Link to="/about"><nav>About</nav></Link>
         </li>
         <li className="dropdown">
-            <Link to="/tactics">
-             <nav>  Architectural Tactics  <span className="arrow"></span> </nav>
-                 {/* Static down arrow */}
-            </Link>
+          <Link to="/tactics">
+            <nav>Architectural Tactics <span className="arrow"></span></nav>
+            {/* Static down arrow */}
+          </Link>
           <div className="navbar-dropdown">
             <h4>Tactics List</h4>
             <ul>
@@ -67,7 +68,7 @@ export default function Navbar() {
               <li>
                 <div className="icon icon--tactic3"></div>
                 <div className="tactic-content">
-                  <Link to="OneTime">The one time password Tactic</Link>
+                  <Link to="/OneTime">The one time password Tactic</Link>
                   <span className="dropdown-subtext">One-Time Pass, Full-Time Security</span>
                 </div>
               </li>
@@ -80,6 +81,9 @@ export default function Navbar() {
               </li>
             </ul>
           </div>
+        </li>
+        <li>
+          <Link to="/display"><nav>Detect now</nav></Link>
         </li>
         <li>
           <Link to="/contact"><nav>Contact Us</nav></Link>
