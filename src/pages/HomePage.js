@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import '../styles/Home.css';
 import heroImage from '../styles/icons/imHome.svg';
+import TactilizeLogo from '../styles/icons/tactlize-logo.svg';
 
 export default function HomePage() {
   return (
@@ -48,27 +49,27 @@ export default function HomePage() {
 
           {/* First Row: 3 Tactic Cards */}
           <div className="tactics-row">
-            <Link to="/tactics/id-password" className="tactic-card">
+            <Link to="/IDPassword" className="tactic-card">
               <div className="tactic-icon id-password-icon"></div>
-              <h3 className="tactic-name">ID PASSWORD</h3>
+              <h3 className="tactic-name">ID password</h3>
               <p className="tactic-description">
                 A simple and widely used authentication method where users enter a unique ID and password to gain access to a system.
               </p>
               <span className="learn-more">Learn More →</span>
             </Link>
 
-            <Link to="/tactics/maintain-data-confidentiality" className="tactic-card">
+            <Link to="/MaintainData" className="tactic-card">
               <div className="tactic-icon maintain-data-icon"></div>
-              <h3 className="tactic-name">MAINTAIN DATA CONFIDENTIALITY</h3>
+              <h3 className="tactic-name">Mintain Data Confidentiality</h3>
               <p className="tactic-description">
                 A security tactic that ensures sensitive information is only accessible to authorized users by using encryption and controlled access mechanisms.
               </p>
               <span className="learn-more">Learn More →</span>
             </Link>
 
-            <Link to="/tactics/maintain-multiple-copies" className="tactic-card">
+            <Link to="/MaintainMCopies" className="tactic-card">
               <div className="tactic-icon maintain-copies-icon"></div>
-              <h3 className="tactic-name">MAINTAIN MULTIPLE COPIES</h3>
+              <h3 className="tactic-name">Maintain Multiple Copies</h3>
               <p className="tactic-description">
                 Reliable data redundancy technique where multiple copies of data are stored across different locations or systems to ensure availability and fault tolerance in case of failure.
               </p>
@@ -78,18 +79,18 @@ export default function HomePage() {
 
           {/* Second Row: 2 Tactic Cards */}
           <div className="tactics-row">
-            <Link to="/tactics/one-time-password" className="tactic-card">
+            <Link to="/OneTime" className="tactic-card">
               <div className="tactic-icon one-time-password-icon"></div>
-              <h3 className="tactic-name">THE ONETIME PASSWORD</h3>
+              <h3 className="tactic-name">The OneTime Password</h3>
               <p className="tactic-description">
                 A secure authentication method where users are granted temporary access through a unique, time-sensitive code sent to them, typically via email or SMS, for one-time use only.
               </p>
               <span className="learn-more">Learn More →</span>
             </Link>
 
-            <Link to="/tactics/ping-echo" className="tactic-card">
+            <Link to="/PingEcho" className="tactic-card">
               <div className="tactic-icon ping-echo-icon"></div>
-              <h3 className="tactic-name">PING-ECHO</h3>
+              <h3 className="tactic-name">Ping-Echo</h3>
               <p className="tactic-description">
                 A basic availability-checking method where one component sends a "ping" message to another, which replies with an "echo" to confirm it is active and responsive.
               </p>
@@ -98,6 +99,45 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+     <div className='information'>
+     <div className='info1'>
+  <Link to="/">
+   <img
+    src={TactilizeLogo}
+    alt="Tactilize Logo"
+    style={{
+      width: "187.01px",
+      height: "68.93px",
+      objectFit: "contain",
+   }}
+   />
+   </Link>
+      <p className='gris'>
+      Architectural Tactic Detector identifies key design tactics in software to improve system performance, security, and maintainability.
+      </p>
+     </div>
+     <div className='info2'>
+    <p className='gris'>Sections</p>
+    <p>
+    <Link to="/" className="link">Home<br /></Link>
+    <Link to="/about" className="link">About<br /></Link>
+    <Link to="/tactics" className="link">Architectural Tactics<br /></Link>
+    <Link to="/DetectNow" className="link">Detect Now</Link>
+    </p>
+     </div>
+     <div className='info3'>
+     <p>
+     <span className='gris'>Website by</span> Tactlize Team<br></br>
+     <span className='gris'>Set in</span> <Link to="https://www.esi.dz/" className="link" target='_blankq'>Ecole National Superieur d’informatique, Algiers</Link>
+     </p>
+     <p>
+     <Link to="/contact" className="link">Contact Us</Link>     
+     </p>
+     </div>
+     </div>
+     <div className="footer">
+  <p className="last">Copyright © TactlizeTeam. All rights reserved.</p>
+</div>
     </div>
   );
 }

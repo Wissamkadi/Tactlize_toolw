@@ -323,6 +323,14 @@ a:hover {
     border-bottom: 1px solid rgba(255, 255, 255, 0.08); /*I added this*/
 }
 
+.navbar.scrolled {
+    background: rgba(255, 255, 255, 0.5);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* optional: nice shadow effect */
+  }
+  .navbar.scrolled .nav-link {
+    color: black;
+  }
 .navbar-logo {
     display: flex;
     align-items: center; /* Vertically centers the logo */
@@ -383,6 +391,13 @@ a:hover {
   .navbar-links li:hover .navbar-dropdown {
     display: block;
   }
+
+  .navbar.scrolled li a {
+    color: black;
+  }
+  .navbar.scrolled .navbar-links li a:hover {
+    color: var(--secondary);
+}
   
   .navbar-dropdown h4 {
     font-family: 'OutfitRegular',sans-serif;
@@ -725,6 +740,14 @@ textarea {
     width: 32px;
     height: 32px;
     background-image: url('./icons/icMaintainData.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .icon--tactic5 {
+    width: 32px;
+    height: 32px;
+    background-image: url('./icons/iciPingEcho.svg');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;

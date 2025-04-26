@@ -1,6 +1,7 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 import logo from "../styles/icons/tactlize-logo.svg"; 
+import logo2 from "../styles/icons/logo2.svg"; 
 
 export default function Navbar() {
   const [language, setLanguage] = useState("EN/FR");
@@ -13,16 +14,28 @@ export default function Navbar() {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+  
 
   return (
-    <nav className="navbar">
-      <Link to="/" className="navbar-logo">
+    <nav className={`navbar ${isScrolled ? "scrolled" : ""}`}>
+
+<Link to="/" className="navbar-logo">
         <img
-          src={logo}
+          src={isScrolled ? logo2 : logo}
           alt="Tactilize Logo"
           style={{
-            width: "187.01px", // Exact width from Figma
-            height: "68.93px", // Exact height from Figma
+            width: "187.01px",
+            height: "68.93px",
             objectFit: "contain",
           }}
         />
@@ -54,7 +67,7 @@ export default function Navbar() {
               <li>
                 <div className="icon icon--tactic1"></div>
                 <div className="tactic-content">
-                  <Link to="/tactic/1">Maintain Multiple Copies Tactic</Link>
+                  <Link to="MaintainMCopies">Maintain Multiple Copies Tactic</Link>
                   <span className="dropdown-subtext">Redundancy for Reliability</span>
                 </div>
               </li>
@@ -79,11 +92,18 @@ export default function Navbar() {
                   <span className="dropdown-subtext">Encrypted & Safe, Every Step</span>
                 </div>
               </li>
+              <li>
+                <div className="icon icon--tactic5"></div>
+                <div className="tactic-content">
+                  <Link to="/PingEcho">Ping echo tactic</Link>
+                  <span className="dropdown-subtext">Liveness Verified, Connectivity Ensured</span>
+                </div>
+              </li>
             </ul>
           </div>
         </li>
         <li>
-          <Link to="/display"><nav>Detect now</nav></Link>
+          <Link to="/upload"><nav>Detect now</nav></Link>
         </li>
         <li>
           <Link to="/contact"><nav>Contact Us</nav></Link>

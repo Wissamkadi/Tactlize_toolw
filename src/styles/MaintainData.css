@@ -3,6 +3,9 @@
     background-color: var(--primary);
     color: var(--white);
 }
+h2{    
+  margin-bottom: -15px !important;
+  }
 p{
 font-family: 'OutfitRegular',sans-serif;
 font-style: normal;
@@ -96,19 +99,13 @@ opacity: 0.7;
 .btn-icon{
     font-size: 1rem;
 }
-#MaintainData{
-  position: absolute;
-  width: 525px;
-  height: 300px;
-  left: 690px;
-  top: 930px;
-}
+
 /* questionmark */
 #challenge1{
   position: absolute;
   width: 100px;
   height: 100px;
-  left: 1080px;
-  top: 1240px;
+  left: 85%;
+  top: 190%;
   transform: rotate(7.57deg);
 }

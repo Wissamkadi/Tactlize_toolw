@@ -10,7 +10,6 @@ return(
   <div className='OneTime-page'>
    <section className="section">
     <div className="section-content">
-        <br></br>
       <h1 className="section-title">The Onetime password<span className='colored-word'>Tactic</span></h1>
       <h4 className="section-tagline">One-Time Pass, Full-Time Security</h4>
       <h2 className="section-subtitle">Introduction to the Tactic</h2>
@@ -27,26 +26,43 @@ return(
       </p>
       </div>
       </section>
-      <section className="section">
-      <div className="section-content">
-      <h2 className="section-subtitle">How It Works?</h2>
+
+  <section className="section">
+  <div className="section-content">
+    <h2 className="section-subtitle">How It Works?</h2>
+    <div className="image-text-row">
+      <div className="text-column">
       <p>
-      When a user attempts to log in, the system generates a<br></br> unique, time-sensitive OTP and delivers it via SMS, email,<br></br> or an authentication app. The user enters the OTP, which is<br></br> then verified against the system's records. If valid, access is<br></br> granted; otherwise, the attempt is denied. Each OTP is<br></br> single-use and expires after a short period, preventing<br></br> reuse and reducing the risk of unauthorized access.<br></br>
-      It ensures that even if a password is compromised,<br></br> unauthorized access is still unlikely without the OTP. The<br></br> limited validity window and single-use nature of OTPs help<br></br> protect against replay attacks and other forms of<br></br> intrusion.
+        When a user attempts to log in, the system generates a
+        unique, time-sensitive OTP and delivers it via SMS, email,
+        or an authentication app. The user enters the OTP, which is
+        then verified against the system's records. If valid, access is
+        granted; otherwise, the attempt is denied. Each OTP is
+        single-use and expires after a short period.
+        It ensures that even if a password is compromised,
+        unauthorized access is still unlikely without the OTP. The
+        limited validity window and single-use nature of OTPs help
+        protect against replay attacks and other forms of intrusion.
       </p>
       </div>
-   </section>
-   <img src={OneTime} alt='OneTimePassword-tactic' id='onetime'></img>
+      <div className="image-column">
+      <img src={OneTime} alt="OneTimePassword-tactic" />      
+      </div>
+    </div>
+  </div>
+</section>
+
+
    <div className="card4">
     <h4>Trade-offs & Challenges</h4>
    <p>
-   Simple to implement but vulnerable to phishing/brute-force attacks. Requires password policies (complexity, expiration) which can frustrate users. Multi-factor authentication improves security but adds steps. 
-    </p>
+   Ensuring the security of one-time passwords (OTPs) requires strong encryption and secure transmission, adding computational overhead. While OTPs enhance security by preventing reuse, they can introduce usability challenges, such as delivery delays and synchronization issues.
+   </p>
     </div>
     <img src={challenge} alt='challenge' id='challenge2'></img>
     <div>
     <Link to="/upload" className="btn2 btn-primary">
-    Uplaod your trace and detect the architectural tactic
+    Start Detecting
     <span className="btn-icon">→</span>
     </Link>
     </div>

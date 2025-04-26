@@ -10,12 +10,11 @@ return(
   <div className='MaintainData-page'>
    <section className="section">
     <div className="section-content">
-        <br></br>
       <h1 className="section-title">Maintain Data Confidentiality<span className='colored-word'>Tactic</span></h1>
       <h4 className="section-tagline">Encrypted & Safe, Every Step</h4>
       <h2 className="section-subtitle">Introduction to the Tactic</h2>
       <p>
-           This tactic ensures that sensitive data is kept private and accessible only to authorized users. It involves techniques such as encryption, access control, and secure transmission to prevent data leaks or unauthorized access. IIt is used in a digital world, protecting confidential information (e.g., user credentials, financial records, medical data) is crucial. It is like Like sealing a letter in an envelope—only the recipient can open and read it.
+           This tactic ensures that sensitive data is kept private and accessible only to authorized users. It involves techniques such as encryption, access control, and secure transmission to prevent data leaks or unauthorized access. IIt is used in a digital world, protecting confidential information (e.g., user credentials, financial records, medical data) is crucial.It is like Like sealing a letter in an envelope—only the recipient can open and read it.
       </p>
       </div>
     </section>
@@ -30,17 +29,25 @@ return(
      </p>
       </div>
     </section>
-    <section className="section">
-      <div className="section-content">
-      <h2 className="section-subtitle">How It Works?</h2>
+
+  <section className="section">
+  <div className="section-content">
+    <h2 className="section-subtitle">How It Works?</h2>
+    <div className="image-text-row">
+      <div className="text-column">
       <p>
-      <span className="highlight">Encryption:</span> Data is converted into an unreadable format<br></br>(ciphertext) before storage or transmission.<br></br>
-      <span className="highlight"> Access Control:</span> Only users with the correct permissions<br></br> or decryption keys can access the data.<br></br>
-      <span className="highlight"> Secure Transmission:</span> Data is sent over encrypted<br></br> connections (e.g., HTTPS, TLS) to prevent interception.<br></br>
+      <span className="highlight">Encryption:</span> Data is converted into an unreadable format (ciphertext) before storage or transmission.
+      <span className="highlight"> Access Control:</span> Only users with the correct permissions or decryption keys can access the data.
+      <span className="highlight"> Secure Transmission:</span> Data is sent over encrypted connections (e.g., HTTPS, TLS) to prevent interception.
       </p>
       </div>
-   </section>
-   <img src={MaintainData} alt='maintaindata-tactic' id='MaintainData'></img>
+      <div className="image-column">
+      <img src={MaintainData} alt='maintaindata-tactic' id='MaintainData'></img>
+      </div>
+    </div>
+  </div>
+</section>
+
    <div className="card3">
     <h4>Trade-offs & Challenges</h4>
    <p>
@@ -50,7 +57,7 @@ return(
     <img src={challenge} alt='challenge' id='challenge1'></img>
     <div>
     <Link to="/upload" className="btn2 btn-primary">
-    Uplaod your trace and detect the architectural tactic
+    Start Detecting
     <span className="btn-icon">→</span>
     </Link>
     </div>

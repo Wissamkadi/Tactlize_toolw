@@ -17,7 +17,7 @@
 }
 
 .hero h1 {
-  font-size: 4.5rem;
+  font-size: 4rem;
   color: var(--white);
   font-weight: var(--font-weight-semi-bold);
   line-height: 1.2;
@@ -53,9 +53,9 @@
 
 .hero-image img {
   width: 100%;
-  max-width: 400px;
+  max-width: 370px;
   height: auto;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 /* Button Styles */
@@ -122,9 +122,7 @@
 .tactics-title {
   font-size: 2.5rem;
   color: var(--secondary);
-  font-weight: var(--font-weight-semi-bold);
   margin-bottom: 2rem;
-  text-transform: uppercase;
   font-family: 'OutfitSemiBold', sans-serif;
 }
 
@@ -134,22 +132,6 @@
   gap: 2.5rem;
   margin-bottom: 4rem;
   flex-wrap: wrap;
-}
-
-.tactic-card {
-  background-color: var(--white);
-  border: none;
-  border-radius: 12px;
-  padding: 2rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-  text-decoration: none;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 300px;
-  height: 350px;
 }
 
 .tactic-card:hover {
@@ -166,10 +148,10 @@
 }
 
 .tactic-icon {
-  width: 100px;
-  height: 100px;
-  margin: 1rem 0 2rem 0; /* Increased bottom margin for better spacing */
-  background-size: contain;
+  width: 80px;
+  height: 80px;
+  margin: 0.2rem 0 1rem 0; /* Increased bottom margin for better spacing */
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -197,29 +179,48 @@
 .tactic-name {
   font-size: 1.125rem;
   color: var(--primary);
-  font-weight: var(--font-weight-bold);
-  margin-bottom: 1rem; /* Increased spacing */
+  margin-bottom: 1rem;
   text-align: center;
-  text-transform: uppercase;
   font-family: 'OutfitSemiBold', sans-serif;
+}
+
+.tactic-card {
+  background-color: var(--white);
+  border: none;
+  border-radius: 12px;
+  padding: 1.2rem;
+  box-shadow: 1px 5px 18px #14213D, inset 1px 5px 5px #14213D;  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  text-decoration: none;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; 
+  width: 300px;
+  height: 350px;
 }
 
 .tactic-description {
   font-size: 0.875rem;
-  color: var(--gray-2);
-  text-align: left;
+  color: var(--gray-4);
+  text-align: center;
   font-family: 'OutfitRegular', sans-serif;
   line-height: 1.4;
-  margin-bottom: 1.5rem; /* Increased spacing */
+  margin-bottom: 1.5rem; /* Ensures some space below the description */
+  flex-grow: 1; /* Takes available space */
 }
 
 .learn-more {
-  font-size: 0.75rem;
+  font-size: 1rem;
   color: var(--secondary);
-  font-weight: var(--font-weight-regular);
   text-decoration: none;
   font-family: 'OutfitRegular', sans-serif;
+  position: absolute; /* Absolute positioning */
+  bottom: 1.5rem; /* Ensures it's at the bottom of the card */
+  left: 50%; /* Centers it horizontally */
+  transform: translateX(-50%); /* Adjusts for centering */
 }
+
 
 /* Media Queries for Responsiveness */
 
@@ -230,9 +231,10 @@
     height: 350px;
   }
 
+
   .tactic-icon {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
   }
 }
 
@@ -244,8 +246,8 @@
   }
 
   .tactic-icon {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
   }
 
   .tactic-name {
@@ -257,7 +259,7 @@
   }
 
   .learn-more {
-    font-size: 0.625rem;
+    font-size: 0.875rem;
   }
 
   .tactics-row {
@@ -273,8 +275,8 @@
   }
 
   .tactic-icon {
-    width: 70px;
-    height: 70px;
+    width: 50px;
+    height: 50px;
   }
 
   .tactic-name {
@@ -286,7 +288,7 @@
   }
 
   .learn-more {
-    font-size: 0.625rem;
+    font-size: 0.875rem;
   }
 
   .tactics-row {
@@ -338,3 +340,56 @@
     padding: 0 5vw;
   }
 }
+
+
+.information {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 5vw;
+  margin-top: -1.5%;
+}
+
+.info1, .info2 {
+  flex: 1 1 300px;
+  max-width: 30%;
+}
+.info2{
+position: absolute;
+height: 193px;
+left: 39%;
+top: 297%;
+}
+.info3{
+position: absolute;
+width: 38%;
+height: 120px;
+left: 60%;
+top: 297%;
+}
+.information p {
+  font-size: 20px;
+}
+
+.link {
+  color: var(--white);
+  text-decoration: none;
+}
+.link:hover {
+  color: #9E9E9E;}
+.gris{
+color: #9E9E9E;
+}
+.last{
+  color: rgba(229, 229, 229, 0.4);
+  font-size: 16px;
+}
+.footer {
+  border-top: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+
