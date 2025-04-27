@@ -26,27 +26,27 @@ export default function DisplayPage() {
           <div className="upload-info">
             <div className="info-item">
               <span className="info-icon icon--accepted-file"></span>
-              <p><span className="info-title">ACCEPTED FILE TYPES</span><br />You can upload your execution trace as a .txt, .doc, .docx, or .pdf file only.</p>
+              <p><span className="info-title">Accepted file types</span><br />You can upload your execution trace as a .txt, .doc, .docx, or .pdf file only.</p>
             </div>
             <div className="info-item">
               <span className="info-icon icon--required-format"></span>
-              <p><span className="info-title">REQUIRED FORMAT</span><br />Each line must follow this structure: CALLER::caller,METHOD::mthd,CALLEE::callee;</p>
+              <p><span className="info-title">Required format</span><br />Each line must follow this structure: CALLER::caller,METHOD::mthd,CALLEE::callee;</p>
             </div>
             <div className="info-item">
               <span className="info-icon icon--file-preparation"></span>
-              <p><span className="info-title">FILE PREPARATION GUIDELINES</span><br />Submit readable, properly formatted files. Avoid corrupted or password-protected files.</p>
+              <p><span className="info-title">File preparation guidelines</span><br />Submit readable, properly formatted files. Avoid corrupted or password-protected files.</p>
             </div>
             <div className="info-item">
               <span className="info-icon icon--document-control"></span>
-              <p><span className="info-title">DOCUMENT CONTROL</span><br />You can modify, replace, or delete your file anytime before parsing.</p>
+              <p><span className="info-title">Document control</span><br />You can modify, replace, or delete your file anytime before parsing.</p>
             </div>
             <div className="info-item">
               <span className="info-icon icon--automatic-deletion"></span>
-              <p><span className="info-title">AUTOMATIC DELETION</span><br />All uploaded files are automatically deleted after they are processed—nothing is stored.</p>
+              <p><span className="info-title">Automatic deletion</span><br />All uploaded files are automatically deleted after they are processed—nothing is stored.</p>
             </div>
             <div className="info-item">
               <span className="info-icon icon--privacy-assurance"></span>
-              <p><span className="info-title">PRIVACY ASSURANCE</span><br />Uploaded documents are not publicly shared, listed, or stored. We prioritize your privacy.</p>
+              <p><span className="info-title">Privacy assurance</span><br />Uploaded documents are not publicly shared, listed, or stored. We prioritize your privacy.</p>
             </div>
           </div>
         </div>

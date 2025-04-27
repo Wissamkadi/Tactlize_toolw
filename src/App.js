@@ -12,13 +12,14 @@ import IDPasswordPage from "./pages/IDPasswordPage";
 import MaintainDataPage from "./pages/MaintainDataPage";
 import OneTimePage from "./pages/OneTimePage";
 import PingEchoPage from "./pages/PingEchoPage";
+import ScrollToTop from "./components/ScrollToTop";  // Importer le composant ScrollToTop
 import './styles/global.css';
-
 
 function App() {
   return (
     <Router>
       <Navbar />
+      <ScrollToTop />  {/* Ajouter le bouton de défilement vers le haut ici */}
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/javaccdetails" element={<JavaCCDetailsPage />} />
@@ -29,12 +30,11 @@ function App() {
         <Route path="/OneTime" element={<OneTimePage />} />
         <Route path="/PingEcho" element={<PingEchoPage />} />
         <Route path="/contact" element={<ContactUsPage />} />
-        <Route path="/ContactUsResult" element={<ContactUsPageResult/>} />
+        <Route path="/ContactUsResult" element={<ContactUsPageResult />} />
         <Route path="/upload" element={<UploadPage />} />
         <Route path="/results" element={<ResultsPage />} />
       </Routes>
     </Router>
-
   );
 }
 

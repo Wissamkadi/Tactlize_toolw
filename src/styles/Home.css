@@ -70,6 +70,7 @@
   font-family: 'OutfitRegular', sans-serif;
   text-decoration: none;
   transition: background-color 0.3s ease, transform 0.1s ease;
+  margin-top: 20px;
 }
 
 .btn-primary {
@@ -359,14 +360,14 @@
 position: absolute;
 height: 193px;
 left: 39%;
-top: 297%;
+top: 293%;
 }
 .info3{
 position: absolute;
 width: 38%;
 height: 120px;
 left: 60%;
-top: 297%;
+top: 293%;
 }
 .information p {
   font-size: 20px;

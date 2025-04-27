@@ -60,7 +60,7 @@ export default function HomePage() {
 
             <Link to="/MaintainData" className="tactic-card">
               <div className="tactic-icon maintain-data-icon"></div>
-              <h3 className="tactic-name">Mintain Data Confidentiality</h3>
+              <h3 className="tactic-name">Maintain Data Confidentiality</h3>
               <p className="tactic-description">
                 A security tactic that ensures sensitive information is only accessible to authorized users by using encryption and controlled access mechanisms.
               </p>
@@ -99,45 +99,44 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-     <div className='information'>
-     <div className='info1'>
-  <Link to="/">
-   <img
-    src={TactilizeLogo}
-    alt="Tactilize Logo"
-    style={{
-      width: "187.01px",
-      height: "68.93px",
-      objectFit: "contain",
-   }}
-   />
-   </Link>
-      <p className='gris'>
-      Architectural Tactic Detector identifies key design tactics in software to improve system performance, security, and maintainability.
-      </p>
-     </div>
-     <div className='info2'>
-    <p className='gris'>Sections</p>
-    <p>
-    <Link to="/" className="link">Home<br /></Link>
-    <Link to="/about" className="link">About<br /></Link>
-    <Link to="/tactics" className="link">Architectural Tactics<br /></Link>
-    <Link to="/DetectNow" className="link">Detect Now</Link>
-    </p>
-     </div>
-     <div className='info3'>
-     <p>
-     <span className='gris'>Website by</span> Tactlize Team<br></br>
-     <span className='gris'>Set in</span> <Link to="https://www.esi.dz/" className="link" target='_blankq'>Ecole National Superieur d’informatique, Algiers</Link>
-     </p>
-     <p>
-     <Link to="/contact" className="link">Contact Us</Link>     
-     </p>
-     </div>
-     </div>
-     <div className="footer">
-  <p className="last">Copyright © TactlizeTeam. All rights reserved.</p>
-</div>
+
+      {/* Information Section */}
+      <div className='information'>
+        <div className='info1'>
+          <Link to="/">
+            <img
+              src={TactilizeLogo}
+              alt="Tactilize Logo"
+              style={{
+                width: "187.01px",
+                height: "68.93px",
+                objectFit: "contain",
+              }}
+            />
+          </Link>
+          <p className='gris'>
+            Architectural Tactic Detector identifies key design tactics in software to improve system performance, security, and maintainability.
+          </p>
+        </div>
+        <div className='info2'>
+          <p className='gris'>Sections</p>
+          <p>
+            <Link to="/" className="link">Home<br /></Link>
+            <Link to="/about" className="link">About<br /></Link>
+            <Link to="/tactics" className="link">Architectural Tactics<br /></Link>
+            <Link to="/DetectNow" className="link">Detect Now</Link>
+          </p>
+        </div>
+        <div className='info3'>
+          <p>
+            <span className='gris'>Website by</span> Tactlize Team<br></br>
+            <span className='gris'>Set in</span> <Link to="https://www.esi.dz/" className="link" target='_blank'>Ecole National Superieur d’informatique, Algiers</Link>
+          </p>
+          <p>
+            <Link to="/contact" className="link">Contact Us</Link>
+          </p>
+        </div>
+      </div>
     </div>
   );
 }
