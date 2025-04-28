@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
 import JavaCCDetailsPage from "./pages/JavaCCDetailsPage";
@@ -12,6 +12,7 @@ import IDPasswordPage from "./pages/IDPasswordPage";
 import MaintainDataPage from "./pages/MaintainDataPage";
 import OneTimePage from "./pages/OneTimePage";
 import PingEchoPage from "./pages/PingEchoPage";
+
 import './styles/global.css';
 
 
@@ -31,7 +32,7 @@ function App() {
         <Route path="/contact" element={<ContactUsPage />} />
         <Route path="/ContactUsResult" element={<ContactUsPageResult/>} />
         <Route path="/upload" element={<UploadPage />} />
-        <Route path="/results" element={<ResultsPage />} />
+        <Route path="/ResultsPage" element={<ResultsPage />} />         
       </Routes>
     </Router>
 

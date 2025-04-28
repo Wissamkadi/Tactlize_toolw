@@ -1,0 +1,356 @@
+.results-container {
+    background-color: var(--primary); 
+    min-height: 100vh;
+    color: var(--white);
+    font-family: 'OutfitRegular', sans-serif;
+    display: flex;
+    flex-direction: column;
+    padding: 0.25% 4.5%;
+    position: relative;
+  }
+  
+  .results-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0.25% 4.5%;
+    position: relative; /* Ensure images are positioned relative to this container */
+  }
+  
+  .results-decor-large {
+    position: absolute;
+    top: 80px;
+    right: 7vw;
+    width: 101.32px;
+    height: 140px;
+    background: url('../styles/icons/document-large.svg') no-repeat center;
+    background-size: contain;
+    z-index: 1;
+  }
+  
+  .results-decor-small {
+    position: absolute;
+    top: 155px; /* Slightly higher than the large image */
+    right: 1vw; /* Slightly further from the right edge */
+    width: 90.61px;
+    height: 90.57px;
+    transform: rotate(+14.76deg);
+    background: url('../styles/icons/document-small.svg') no-repeat center;
+    background-size: contain;
+    z-index: 1;
+    transform: rotate(+14.76deg);
+  }
+  
+  .results-title-area {
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    margin-bottom: 3rem;
+  }
+  
+  /* Copied exactly from Upload.css */
+  .main-title {  
+    font-size: 50px;
+    font-weight: var(--font-weight-semi-bold);
+    text-align: left;
+    font-family: 'OutfitSemiBold';
+    line-height: 1.2;
+  }
+  
+  /* Copied exactly from Upload.css */
+  .main-title .highlighted {
+    color: var(--secondary); /* Orange */
+  }
+  
+  .results-file-message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fca411;
+    border-radius: 25px;
+    padding: 0.5rem 1rem;
+    margin-bottom: 2rem;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 0.5rem;
+  }
+  
+  .results-file-message p {
+    margin: 0;
+    font-size: 1rem;
+    color: #ffffff;
+  }
+  
+  .results-delete-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+  
+  .results-success-icon {
+    width: 20px;
+    height: 20px;
+    /* background: url('../styles/icons/check-circle.svg') no-repeat center; */
+    background-size: contain;
+  }
+  
+  .results-trash-icon {
+    width: 20px;
+    height: 20px;
+    background: url('../styles/icons/trash.svg') no-repeat center;
+    background-size: contain;
+    display: block;
+  }
+  
+  .results-content-area {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+    gap: 2rem;
+  }
+  
+  .results-trace-area, .results-output-area {
+    flex: 1;
+  }
+  
+  .results-trace-area h2, .results-output-area h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: 'OutfitSemiBold';
+    margin-bottom: 1rem;
+    color: #ffffff;
+  }
+  
+  .results-trace-content, .results-output-content {
+    background-color: #d3d3d3;
+    border-radius: 10px;
+    padding: 1rem;
+    min-height: 300px;
+    color: #333333;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
+  .results-trace-content p, .results-output-content p {
+    margin: 0;
+    white-space: pre-wrap;
+  }
+  
+  .results-output-area {
+    position: relative;
+  }
+  
+  .results-play-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #ff0000;
+    border: none;
+    border-radius: 5px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+  }
+  
+  .results-play-icon {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url('../styles/icons/play-icon.svg') no-repeat center;
+    background-size: contain;
+    margin: 0 auto;
+  }
+  
+  .results-tactic-area {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  
+  .results-tactic-area h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    font-family: 'OutfitSemiBold';
+    margin-bottom: 1rem;
+    color: #ffffff;
+  }
+  
+  .results-tactic-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .results-tactic-option {
+    background-color: #fca411;
+    color: #ffffff;
+    border: none;
+    border-radius: 20px;
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    font-family: 'OutfitSemiBold';
+    transition: background-color 0.3s;
+  }
+  
+  .results-tactic-option:hover {
+    background-color: #e69500;
+  }
+  
+  .results-tactic-option.selected {
+    background-color: #e69500;
+  }
+  
+  .results-export-area {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+  }
+  
+  .results-export-btn {
+    background-color: #fca411;
+    color: #ffffff;
+    border: none;
+    border-radius: 20px;
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    font-family: 'OutfitSemiBold';
+    transition: background-color 0.3s;
+  }
+  
+  .results-export-btn:hover {
+    background-color: #e69500;
+  }
+  
+  .results-export-btn:disabled {
+    background-color: #666666;
+    cursor: not-allowed;
+  }
+  
+  .results-export-message {
+    font-size: 0.9rem;
+    color: #ffffff;
+    font-family: 'OutfitRegular';
+  }
+  
+  /* Media Queries for Responsiveness */
+  @media (min-width: 1024px) and (max-width: 1440px) {
+    .main-title {
+      font-size: 3.125rem; /* 50px */
+    }
+  
+    .results-trace-area h2, .results-output-area h2 {
+      font-size: 1.25rem;
+    }
+  
+    .results-tactic-area h3 {
+      font-size: 1rem;
+    }
+  
+    .results-tactic-option, .results-export-btn {
+      padding: 0.5rem 1.25rem;
+      font-size: 0.875rem;
+    }
+  
+    .results-decor-large {
+      top: 80px;
+      right: 7vw;
+      width: 101.32px;
+      height: 140px;
+    }
+  
+    .results-decor-small {
+        top: 155px; /* Slightly higher than the large image */
+        right: 1vw; /* Slightly further from the right edge */
+        width: 90.61px;
+        height: 90.57px;
+        transform: rotate(+14.76deg);
+    }
+  }
+  
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .main-title {
+      font-size: 3rem; /* 48px */
+    }
+  
+    .results-content-area {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+  
+    .results-trace-area h2, .results-output-area h2 {
+      font-size: 1.2rem;
+    }
+  
+    .results-tactic-area h3 {
+      font-size: 1rem;
+    }
+  
+    .results-tactic-option, .results-export-btn {
+      padding: 0.5rem 1rem;
+      font-size: 0.875rem;
+    }
+  
+    .results-decor-large {
+      top: 100px;
+      right: 1vw;
+      width: 50px;
+      height: 48px;
+    }
+  
+    .results-decor-small {
+      top: 50px;
+      right: 6vw;
+      width: 70px;
+      height: 100px;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .main-title {
+      font-size: 2rem; /* 32px */
+    }
+  
+    .results-content-area {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  
+    .results-trace-area h2, .results-output-area h2 {
+      font-size: 1rem;
+    }
+  
+    .results-tactic-area h3 {
+      font-size: 0.875rem;
+    }
+  
+    .results-tactic-option, .results-export-btn {
+      padding: 0.5rem 1rem;
+      font-size: 0.75rem;
+    }
+  
+    .results-export-message {
+      font-size: 0.75rem;
+    }
+  
+    .results-decor-large {
+      top: 80px;
+      right: 1vw;
+      width: 40px;
+      height: 38px;
+    }
+  
+    .results-decor-small {
+      top: 40px;
+      right: 5vw;
+      width: 60px;
+      height: 80px;
+    }
+  }

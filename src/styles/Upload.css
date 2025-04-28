@@ -13,7 +13,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 3% 5%;
+  padding: 0.25% 4.75%;
 }
 
 /* Title Section */
@@ -25,7 +25,7 @@
 }
 
 .main-title {
-  font-size:50px; /* 64px */
+  font-size:50px; 
   font-weight: var(--font-weight-semi-bold);
   text-align: left;
   font-family: 'OutfitSemiBold';
@@ -88,6 +88,7 @@
 
 .upload-btn:hover {
   background-color: var(--secondary-hover);
+  order:3;
 }
 
 /* Guideline Grid Section */
@@ -100,12 +101,12 @@
 .upload-info {
   display: flex;
   justify-content: center;
-  gap: 30px; /* Figma gap for big frame */
+  gap: 20px; /* Figma gap for big frame */
   flex-wrap: wrap;
-  padding: 0; /* Figma padding */
+  padding: 0 0; /* Figma padding */
   border: none; /* No border per Figma */
   border-radius: 0;
-  width: 100%;  
+  width: 100%; 
   height: 171px; /* Figma height */
   box-sizing: border-box;
 }
@@ -113,9 +114,9 @@
 .info-item {
   display: flex;
   align-items: flex-start;
-  width: 330px; /* Figma width for each group */
+  width: 410px; /* Adjusted to fit 3 items per row within 1198.99px */
   height: 69px; /* Figma height for each group */
-  gap: 10px; /* Figma gap between icon and text */
+  gap: 6px; /* Figma gap between icon and text */
 }
 
 .info-icon {
@@ -152,19 +153,19 @@
 }
 
 .info-item p {
-  width: 290px; /* Figma width */
+  width: 410px;
   height: 69px; /* Figma height */
   margin-top: 3px; /* Figma Y position */
   font-size: 18px; /* Figma font size */
-  line-height: 1; /* Figma line height matches font size */
-  text-align: left;
+  line-height: 1.2; /* Figma line height matches font size */
+  text-align: justify;
   color: var(--white);
 }
 
 .info-item .info-title {
   color: var(--secondary);
   font-weight: var(--font-weight-semi-bold);
-  font-family: 'OutfitSemiBold', sans-serif;
+  font-family: 'OutfitSemiBold';
   font-size: 18px; /* Figma font size */
 }
 
@@ -186,32 +187,32 @@
   }
 
   .upload-info {
-    gap: 30px; 
-    width: 100%;
-    height: auto;
+    gap: 20px; 
+    width: 100%; /* Maintain auto-layout */
+    height: 171px;
   }
 
   .info-item {
-    width: 330px; /* Scaled down proportionally */
+    width: 410px; /* Scaled down proportionally */
     height: 69px;
-    gap: 10px; /* Scaled down */
+    gap: 6px;
   }
 
   .info-icon {
-    width: 30px; /* Scaled down */
+    width: 30px;
     height: 30px;
-    margin-top: 8px; /* Scaled down */
+    margin-top: 8px;
   }
 
   .info-item p {
-    width: 290px; /* Scaled down */
+    width: 410px; /* Scaled down: 320px - 32px icon - 10px gap */
     height: 69px;
-    margin-top: 3px; /* Scaled down */
-    font-size: 18px; /* Scaled down */
+    margin-top: 3px;
+    font-size: 18px;
   }
 
   .info-item .info-title {
-    font-size: 18px; /* Scaled down */
+    font-size: 18px;
   }
 }
 
@@ -232,12 +233,13 @@
 
   .upload-info {
     gap: 15px; /* Further reduced gap */
-    width: 95%;
+    width: min(1198.99px, 100%); /* Maintain auto-layout */
+    max-width: 100%;
     height: auto;
   }
 
   .info-item {
-    width: 250px; /* Scaled down */
+    width: 280px; /* Scaled down */
     height: 55px;
     gap: 6px; /* Scaled down */
   }
@@ -249,7 +251,7 @@
   }
 
   .info-item p {
-    width: 220px; /* Scaled down */
+    width: 250px; /* Scaled down: 280px - 24px icon - 6px gap */
     height: 55px;
     margin-top: 1px; /* Scaled down */
     font-size: 14px; /* Scaled down */
@@ -279,7 +281,8 @@
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    width: 100%;
+    width: min(1198.99px, 100%); /* Maintain auto-layout */
+    max-width: 100%;
     height: auto;
   }
 
