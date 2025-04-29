@@ -24,7 +24,7 @@
     top: 80px;
     right: 7vw;
     width: 101.32px;
-    height: 140px;
+    height: 130px;
     background: url('../styles/icons/document-large.svg') no-repeat center;
     background-size: contain;
     z-index: 1;
@@ -34,8 +34,8 @@
     position: absolute;
     top: 155px; /* Slightly higher than the large image */
     right: 1vw; /* Slightly further from the right edge */
-    width: 90.61px;
-    height: 90.57px;
+    width: 80.61px;
+    height: 80.57px;
     transform: rotate(+14.76deg);
     background: url('../styles/icons/document-small.svg') no-repeat center;
     background-size: contain;
@@ -65,46 +65,53 @@
   }
   
   .results-file-message {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #fca411;
-    border-radius: 25px;
-    padding: 0.5rem 1rem;
-    margin-bottom: 2rem;
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-    gap: 0.5rem;
-  }
-  
-  .results-file-message p {
-    margin: 0;
-    font-size: 1rem;
-    color: #ffffff;
-  }
-  
-  .results-delete-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-  }
-  
-  .results-success-icon {
-    width: 20px;
-    height: 20px;
-    /* background: url('../styles/icons/check-circle.svg') no-repeat center; */
-    background-size: contain;
-  }
-  
-  .results-trash-icon {
-    width: 20px;
-    height: 20px;
-    background: url('../styles/icons/trash.svg') no-repeat center;
-    background-size: contain;
-    display: block;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fca411;
+  border: 1px solid rgba(255, 255, 255, 0.6); /* White border with 60% opacity */
+  border-radius: 25px;
+  padding: 0.5rem 1rem;
+  margin-bottom: 2rem;
+  width: 494px; /* Frame width from Figma */
+  height: 50px; /* Frame height from Figma */
+  margin-left: auto;
+  margin-right: auto;
+  gap: 12px; /* Gap between elements as per Figma */
+  box-sizing: border-box; /* Ensure padding and border are included in dimensions */
+}
+
+.results-file-message p {
+  margin: 0;
+  font-size: 1rem;
+  color: #ffffff;
+  font-family: 'OutfitRegular';
+  flex: 1; /* Ensure text takes remaining space and centers properly */
+  text-align: center;
+}
+
+.results-delete-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.results-success-icon {
+  width: 30px; /* Scaled down from 50px to fit better within the 50px height */
+  height: 30px;
+  background: url('../styles/icons/document-icon.svg') no-repeat center;
+  background-size: contain;
+}
+
+.results-trash-icon {
+  width: 25px; /* Matches Figma */
+  height: 25px;
+  background: url('../styles/icons/trash.svg') no-repeat center;
+  background-size: contain;
+  display: block;
+}
+
   
   .results-content-area {
     width: 100%;
