@@ -11,25 +11,65 @@ const ResultsPage = () => {
   const [exportSuccess, setExportSuccess] = useState(false);
   const [pdfDownloadUrl, setPdfDownloadUrl] = useState('');
 
+  // Initialize the uploaded file from the state
   useEffect(() => {
     if (state?.file) {
       setUploadedFile(state.file);
     }
   }, [state]);
 
+  // Handle file content display (txt or pdf converted to txt)
   useEffect(() => {
     if (uploadedFile) {
-      setFileContent('CALLER::client,METHOD::request,CALLEE::server;\nCALLER::server,METHOD::response,CALLEE::client;');
+      const fileExtension = uploadedFile.name.split('.').pop().toLowerCase();
+
+      if (fileExtension === 'txt') {
+        // For txt files, read directly
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          const text = e.target.result;
+          setFileContent(text || 'No content found in the file.');
+        };
+        reader.onerror = () => {
+          setFileContent('Error reading the file.');
+        };
+        reader.readAsText(uploadedFile);
+      } else if (fileExtension === 'pdf') {
+        // For pdf files, send to backend to convert to txt
+        const formData = new FormData();
+        formData.append('file', uploadedFile);
+
+        fetch('http://localhost:8080/api/files/upload/convert-to-txt', {
+          method: 'POST',
+          body: formData,
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.convertedText) {
+              setFileContent(data.convertedText);
+            } else {
+              setFileContent('Error converting PDF to text.');
+            }
+          })
+          .catch((error) => {
+            console.error('PDF conversion error:', error);
+            setFileContent(`Error converting PDF: ${error.message}`);
+          });
+      } else {
+        setFileContent('Unsupported file type. Only .txt and .pdf are supported.');
+      }
     }
   }, [uploadedFile]);
 
+  // Handle tactic selection
   const handleTacticSelect = (tactic) => {
     setSelectedTactic(tactic);
   };
 
+  // Handle detection by sending the file and tactic to the backend
   const handleDetect = async () => {
     if (!uploadedFile || !selectedTactic) {
-      setResult('Please select a file and a tactic.');
+      setResult('Please upload a file and select a tactic.');
       return;
     }
 
@@ -45,18 +85,24 @@ const ResultsPage = () => {
       const data = await response.json();
 
       if (response.ok) {
-        setResult(data.parsedResult);
-        setPdfDownloadUrl(data.pdfDownloadUrl);
+        setResult(data.parsedResult || 'No parsed result returned.');
+        setPdfDownloadUrl(data.pdfDownloadUrl || '');
       } else {
-        setResult(Array.isArray(data) ? data.join('\n') : data);
+        if (Array.isArray(data)) {
+          setResult(data.join('\n'));
+        } else {
+          setResult(data || 'Unknown error occurred.');
+        }
         setPdfDownloadUrl('');
       }
     } catch (error) {
-      setResult('Error connecting to the backend.');
+      console.error('Fetch error:', error);
+      setResult(`Error connecting to the backend: ${error.message}. Please ensure the backend server is running on http://localhost:8080.`);
       setPdfDownloadUrl('');
     }
   };
 
+  // Handle export of the PDF result
   const handleExport = () => {
     if (pdfDownloadUrl) {
       const link = document.createElement('a');
@@ -67,10 +113,12 @@ const ResultsPage = () => {
     }
   };
 
+  // Handle file deletion
   const handleDeleteFile = () => {
     setUploadedFile(null);
     setFileContent('Trace will appear here from the uploaded file');
     setResult('');
+    setSelectedTactic('');
     setPdfDownloadUrl('');
     setExportSuccess(false);
   };
@@ -78,7 +126,6 @@ const ResultsPage = () => {
   return (
     <div className="results-container">
       <main className="results-content">
-        {/* Decorative Images */}
         <div className="results-decor-large"></div>
         <div className="results-decor-small"></div>
 
@@ -90,8 +137,10 @@ const ResultsPage = () => {
 
         {uploadedFile && (
           <div className="results-file-message">
-            <span className="results-success-icon"></span>
-            <p>"{uploadedFile.name}" Has been uploaded successfully</p>
+            <div className="results-file-content">
+              <span className="results-success-icon"></span>
+              <p>"{uploadedFile.name}" Has been uploaded successfully</p>
+            </div>
             <button className="results-delete-btn" onClick={handleDeleteFile}>
               <span className="results-trash-icon"></span>
             </button>
@@ -121,31 +170,31 @@ const ResultsPage = () => {
           <h3>Choose another architectural tactic to detect</h3>
           <div className="results-tactic-options">
             <button
-              className={`results-tactic-option ${selectedTactic === 'id_password_authentication' ? 'selected' : ''}`}
+              className={`results-tactic-option id-password ${selectedTactic === 'id_password_authentication' ? 'selected' : ''}`}
               onClick={() => handleTacticSelect('id_password_authentication')}
             >
               ID-Password authentication
             </button>
             <button
-              className={`results-tactic-option ${selectedTactic === 'ping_echo' ? 'selected' : ''}`}
+              className={`results-tactic-option ping-echo ${selectedTactic === 'ping_echo' ? 'selected' : ''}`}
               onClick={() => handleTacticSelect('ping_echo')}
             >
               Ping Echo
             </button>
             <button
-              className={`results-tactic-option ${selectedTactic === 'maintain_data_confidentiality' ? 'selected' : ''}`}
+              className={`results-tactic-option maintain-data-confidentiality ${selectedTactic === 'maintain_data_confidentiality' ? 'selected' : ''}`}
               onClick={() => handleTacticSelect('maintain_data_confidentiality')}
             >
               Maintain Data Confidentiality
             </button>
             <button
-              className={`results-tactic-option ${selectedTactic === 'onetime_password' ? 'selected' : ''}`}
+              className={`results-tactic-option one-time-password ${selectedTactic === 'onetime_password' ? 'selected' : ''}`}
               onClick={() => handleTacticSelect('onetime_password')}
             >
               The One Time Password
             </button>
             <button
-              className={`results-tactic-option ${selectedTactic === 'maintain_multiple_copies' ? 'selected' : ''}`}
+              className={`results-tactic-option maintain-multiple-copies ${selectedTactic === 'maintain_multiple_copies' ? 'selected' : ''}`}
               onClick={() => handleTacticSelect('maintain_multiple_copies')}
             >
               Maintain Multiple Copies
