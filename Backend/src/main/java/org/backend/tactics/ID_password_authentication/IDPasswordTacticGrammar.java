@@ -126,7 +126,7 @@ if (!callee.image.equals(CallerCalleeMap.get("callee"))) {
                     TacticEntities.put("Client", CallerCalleeMap.get("caller"));
                     TacticEntities.put("Authenticator", caller.image);
                     CheckCount++;
-    result.append("==>The ID/password tactic is detected at line " + i);
+    result.append("\n==>The ID/password tactic is detected at line " + i);
     result.append("\n");
     result.append(CallerCalleeMap.get("caller")+"--requestAuthentication-->"+CallerCalleeMap.get("callee"));
     result.append("\n");
