@@ -320,13 +320,13 @@ a:hover {
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08); /*I added this*/
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .navbar.scrolled {
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.92);
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* optional: nice shadow effect */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
   }
   .navbar.scrolled .nav-link {
     color: black;
@@ -393,7 +393,7 @@ a:hover {
   }
 
   .navbar.scrolled li a {
-    color: black;
+    color:var(--primary);
   }
   .navbar.scrolled .navbar-links li a:hover {
     color: var(--secondary);
@@ -918,4 +918,16 @@ textarea {
       .scroll-to-top-btn:focus {
         outline: none; /* Enlève le contour lors du focus */
       }
+      
+
+      .app-container {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh; /* Prend toute la hauteur */
+      }
+      
+      .content {
+        flex: 1; /* Prend tout l'espace disponible */
+      }
+
       

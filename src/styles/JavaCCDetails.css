@@ -1,141 +1,167 @@
-/* 7. Cards & Content Boxes */
+/* 1. Layout & Page Structure */
 .JavaCC {
-    min-height: 100vh;
-    background-color: var(--primary);
-    color: var(--white);
+  min-height: 100vh;
+  background-color: var(--primary);
+  color: var(--white);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-left: 0px;
 }
 
-.container {
-    margin-left: 0px;
-    margin-right: 0px;
-    padding: 0; /* To ensure the margin is not overridden by padding */
+.container1 {
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0;
 }
+
 .section {
-    padding: var(--spacing-lg) var(--screen-edge-spacing);
+  padding: var(--spacing-lg) var(--screen-edge-spacing);
 }
-.section-content{
-    font-family: 'OutfitRegular',sans-serif;
+
+.section-content {
+  font-family: 'OutfitRegular', sans-serif;
 }
-/* Cards */
+
+h2 {
+  margin-top: 2%;
+  margin-bottom: 2rem; /* Add or adjust this value to control space below h2 */
+}
+h3{
+  margin-top: -2%;
+}
+
+.sec {
+  margin-top: 4%;
+}
+/* 3. Cards */
 .card1 {
-    padding: var(--spacing-md);
-    margin-bottom: var(--spacing-md);
-    color: var(--white);
-    box-shadow: 4px 4px 18px rgba(255, 255, 255, 0.15);
-    border-radius: 50px;
-    background: rgba(189, 189, 189, 0.19);
-    border: 1.5px solid #000000;
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  color: var(--white);
+  background: rgba(189, 189, 189, 0.19);
+  border-radius: 50px;
+  border: 1.5px solid #000;
+  box-shadow: 4px 4px 18px rgba(255, 255, 255, 0.15);
+  width: 1115px;
 }
+.box1 {
+  padding: -5px 5px 5px 5px ; /* top, right, bottom, left */
+}
+
 
 .card {
-    background-color: rgba(255, 255, 255, 0.1);
-    padding: var(--spacing-md);
-    margin-bottom: var(--spacing-md);
-    color: var(--white);
-    width: 510px;
-    height: 380px;
-    box-shadow: 4px 4px 18px rgba(255, 255, 255, 0.15);
-    border-radius: 50px;
-    margin-block: 30px;
-    margin-right: 60px;
+  width: 510px;
+  height: 410px;
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  margin-block: 30px;
+  margin-right: 60px;
+  color: var(--white);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  box-shadow: 4px 4px 18px rgba(255, 255, 255, 0.15);
 }
 
-/* Arrows */
-.arrows {
-    position: absolute;
-    width: 109.45px;  /* Adjust size according to image */
-    height: 70.87px;
-}
-
-.arrow1 { top: 1600px; left: 52%; transform: translateX(-50%); } /* Box4 → Box5 */
-.arrow2 { top: 1840px; left: 900px; transform: translateY(-50%) rotate(90deg); } /* Box5 ↓ Box6 */
-.arrow3 { top: 2000px; bottom: 150px; left: 51.5%; transform: translateX(-50%) rotate(180deg); } /* Box7 ← Box6 */
-
-/* Code Block */
-.codeblock {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0px;
-    position: absolute;
-    width: 440px;
-    height: 94px;
-    border-radius: 4px;
-}
-
-/* Card Headers */
+/* 4. Card Elements */
 .card-header {
-    font-family: var(--font-family-heading);
-    font-size: 1.125rem;
-    font-weight: var(--font-weight-semi-bold);
-    color: var(--secondary);
-    margin-bottom: var(--spacing-sm);
-    margin: 20px;
+  margin: 20px;
+  font-family: var(--font-family-heading);
+  font-size: 1.125rem;
+  font-weight: var(--font-weight-semi-bold);
+  color: var(--secondary);
 }
 
-/* Card Body */
-.card-body {
-    margin: 20px;
-    font-family: var(--font-family-body);
-    font-size: 1rem;
-    color: var(--white);
-    font-family: 'OutfitRegular', sans-serif;
-    font-style: normal;
-    font-weight: var(--font-weight-regular);
-    font-size: 24px;
-    line-height: 30px;
+.card-body{
+  margin: 20px;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 36px;
+  font-family: 'OutfitRegular', sans-serif;
+  color: var(--white);
 }
-
 
 .card-body ul li {
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-sm);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
 }
 
+/* 5. Plain List */
 .plain-list {
-    font-family: 'OutfitRegular',sans-serif;
-    list-style: none;
-    padding-left: var(--spacing-md);
-    margin-top: var(--spacing-xs) 0;
-  }
-  
-  .plain-list li {
-    font-size: 1.5rem; 
-    color: var(--gray-2);
-    margin-bottom: var(--spacing-sm);
-    position: relative; /* For positioning the bullet */
-    padding-left: 20px; /* Space for the bullet */
-    text-align: justify; /* Justify the text */
-  
-  }
-  .plain-list li::before {
-    content: '•'; /* Add a bullet */
-    position: absolute;
-    left: 0;
-    color: var(--secondary-hover); /* Match the text color */
-    font-size: 1.5rem;
-    font-weight: var(--font-weight-regular);
-  }
+  list-style: none;
+  padding-left: var(--spacing-md);
+  margin-top: var(--spacing-xs);
+  font-family: 'OutfitRegular', sans-serif;
+  text-align: justify;
+}
 
+.plain-list li {
+  position: relative;
+  padding-left: 20px;
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-sm);
+  color: var(--gray-2);
+}
 
-/* Card Diagram */
+.plain-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--secondary-hover);
+  font-size: 1.5rem;
+  font-weight: var(--font-weight-regular);
+}
+
+/* 6. Diagrams & Codeblocks */
 .card-diagram {
-    max-width: 200px;
-    margin: var(--spacing-md) 0;
-    margin: 20px;
-
+  max-width: 200px;
+  margin: 20px 0;
 }
 
-#icon--javacc{
-    /* Logos/java-plain */
-    position: absolute;
-    width: 97.61px;
-    height: 101.61px;
-    left: 1010px;
-    top: 160px;
-    transform: matrix(1, 0.07, -0.07, 1, 0, 0);
+.codeblock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+  position: absolute;
+  width: 440px;
+  height: 94px;
+  border-radius: 4px;
+  margin: 20px;
 }
-.box2{
-    width: 1080px;
+
+/* 7. Arrows */
+.arrows {
+  position: absolute;
+  width: 109.45px;
+  height: 70.87px;
+}
+
+.arrow1 {
+  top: 290%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.arrow2 {
+  top: 338%;
+  left: 68%;
+  transform: translateY(-50%) rotate(90deg);
+}
+
+.arrow3 {
+  top: 372%;
+  left: 50%;
+  transform: translateX(-50%) rotate(180deg);
+}
+
+/* 8. Icons & Boxes */
+#icon--javacc {
+  position: absolute;
+  width: 97.61px;
+  height: 101.61px;
+  left: 85%;
+  top: 37%;
+  transform: matrix(1, 0.07, -0.07, 1, 0, 0);
 }

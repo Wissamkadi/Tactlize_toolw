@@ -3,19 +3,19 @@ import CodeBlock1 from '../styles/icons/CodeBlock1.png';
 import CodeBlock2 from '../styles/icons/CodeBlock2.png';
 import CodeBlock3 from '../styles/icons/CodeBlock3.png';
 import Arrow from '../styles/icons/arrow.png';
-import image3 from '../styles/icons/image3.png';
+import image3 from '../styles/icons/image3.svg';
 
 export default function JavaCCDetailsPage() {
   return (
     <div className='JavaCC'>
     <section className="section">
-      <div className="container">
+      <div className="container1">
         <h2>
           Parser Generator <span className="colored-word">JavaCC</span>
         </h2>
 
         <div className="section-content">
-          <h3>What is JavaCC?</h3>
+          <h3 className='sec'>What is JavaCC?</h3>
           <div className="card1">
           <div className="box1">
             <p className="card-body">
@@ -101,7 +101,7 @@ export default function JavaCCDetailsPage() {
 
             <div className="card">
             <h4 className="card-header">Compile & Run the Parser</h4>
-              <p className="card-body plain-list">
+              <p className="card-body1 plain-list">
               <li>Compile generated Java files.</li>
               </p>
               <div className="card-diagram">

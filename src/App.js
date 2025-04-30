@@ -12,27 +12,37 @@ import IDPasswordPage from "./pages/IDPasswordPage";
 import MaintainDataPage from "./pages/MaintainDataPage";
 import OneTimePage from "./pages/OneTimePage";
 import PingEchoPage from "./pages/PingEchoPage";
+import Footer from './components/Footer'; 
+import ScrollToTop from './components/ScrollToTop';
+
 import './styles/global.css';
+
 
 function App() {
   return (
     <Router>
-      <Navbar />
-      <ScrollToTop />  {/* Ajouter le bouton de défilement vers le haut ici */}
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/javaccdetails" element={<JavaCCDetailsPage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/MaintainMCopies" element={<MaintainMCopiesPage />} />
-        <Route path="/IDPassword" element={<IDPasswordPage />} />
-        <Route path="/MaintainData" element={<MaintainDataPage />} />
-        <Route path="/OneTime" element={<OneTimePage />} />
-        <Route path="/PingEcho" element={<PingEchoPage />} />
-        <Route path="/contact" element={<ContactUsPage />} />
-        <Route path="/ContactUsResult" element={<ContactUsPageResult />} />
-        <Route path="/upload" element={<UploadPage />} />
-        <Route path="/ResultsPage" element={<ResultsPage />} />         
-      </Routes>
+      <div className="app-container">
+        <Navbar />
+        <div className="content">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/javaccdetails" element={<JavaCCDetailsPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/MaintainMCopies" element={<MaintainMCopiesPage />} />
+            <Route path="/IDPassword" element={<IDPasswordPage />} />
+            <Route path="/MaintainData" element={<MaintainDataPage />} />
+            <Route path="/OneTime" element={<OneTimePage />} />
+            <Route path="/PingEcho" element={<PingEchoPage />} />
+            <Route path="/contact" element={<ContactUsPage />} />
+            <Route path="/ContactUsResult" element={<ContactUsPageResult />} />
+            <Route path="/upload" element={<UploadPage />} />
+            <Route path="/ResultsPage" element={<ResultsPage />} />
+          </Routes>
+        </div>
+
+        <ScrollToTop /> {/* 👈 Add it here */}
+        <Footer />
+      </div>
     </Router>
   );
 }
