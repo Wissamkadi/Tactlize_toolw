@@ -61,7 +61,7 @@ export default function HomePage() {
 
             <div className="tactic-card">
               <div className="tactic-icon maintain-data-icon"></div>
-              <h3 className="tactic-name">Mintain Data Confidentiality</h3>
+              <h3 className="tactic-name">Maintain Data Confidentiality</h3>
               <p className="tactic-description">
                 A security tactic that ensures sensitive information is only accessible to authorized users by using encryption and controlled access mechanisms.
               </p>

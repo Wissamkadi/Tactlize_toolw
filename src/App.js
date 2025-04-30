@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
 import JavaCCDetailsPage from "./pages/JavaCCDetailsPage";
@@ -12,15 +12,15 @@ import IDPasswordPage from "./pages/IDPasswordPage";
 import MaintainDataPage from "./pages/MaintainDataPage";
 import OneTimePage from "./pages/OneTimePage";
 import PingEchoPage from "./pages/PingEchoPage";
-import Footer from './components/Footer'; 
+import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 
 import './styles/global.css';
 
-
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="app-container">
         <Navbar />
         <div className="content">
@@ -39,8 +39,6 @@ function App() {
             <Route path="/ResultsPage" element={<ResultsPage />} />
           </Routes>
         </div>
-
-        <ScrollToTop /> {/* 👈 Add it here */}
         <Footer />
       </div>
     </Router>

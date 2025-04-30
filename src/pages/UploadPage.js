@@ -50,6 +50,7 @@ export default function UploadPage() {
           <div className="upload-info">
             <div className="info-item">
               <span className="info-icon icon--accepted-file"></span>
+
               <p>
                 <span className="info-title">Accepted File Types</span>
                 <br />
@@ -95,6 +96,7 @@ export default function UploadPage() {
                 <br />
                 Uploaded documents are not publicly shared, listed, or stored. We prioritize your privacy.
               </p>
+
             </div>
           </div>
         </div>
