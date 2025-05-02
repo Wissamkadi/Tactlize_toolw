@@ -1,12 +1,30 @@
 import React from 'react';
+import { useState} from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/ContactUs.css';
+import Delete from '../styles/icons/delete1.svg';
+import close from '../styles/icons/close.svg';
 
 const ContactUsPage = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const handleClear = () => {
     document.querySelectorAll('input, textarea').forEach(field => {
       field.value = '';
     });
+  };
+
+  const confirmClear = () => {
+    setIsModalOpen(true);
+  };
+
+  const proceedClear = () => {
+    handleClear();
+    setIsModalOpen(false);
+  };
+
+  const cancelClear = () => {
+    setIsModalOpen(false);
   };
   
   return (
@@ -52,10 +70,29 @@ const ContactUsPage = () => {
           <Link to="/ContactUsResult" className="btn btn-primary submit">
             Submit
           </Link>  
-          <button className="btn btn-secondary clear" onClick={handleClear}>Clear All</button>
+          <button className="btn btn-secondary clear" onClick={confirmClear}>Clear All</button>
           </div>
         </section>
       </div>
+      {/* Modal */}
+      {isModalOpen && (
+        <div className="modal-overlay">
+          <div className="modal-box">
+          <span className="modal-close" onClick={cancelClear}>&times;</span>
+           <button onClick={cancelClear}>
+             <img src={close} alt="close" className='close'></img>
+            </button>
+            <div className="modal-icon">
+              <img src={Delete} alt="delite"></img>
+            </div>
+            <h2 className="modal-warning">Warning!</h2>
+            <p className='message'>Are you sure you want to clear all fields?</p>
+            <button className="modal-yes" onClick={proceedClear}>Yes</button>
+            <button className="modal-no" onClick={cancelClear}>No</button>
+          </div>
+        </div>
+      )}
+
     </>
   );
 };

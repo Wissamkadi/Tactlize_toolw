@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import '../styles/Results.css';
+import Delete from '../styles/icons/delete1.svg';
+import close from '../styles/icons/close.svg';
 
 const ResultsPage = () => {
   const { state } = useLocation();
@@ -15,6 +17,17 @@ const ResultsPage = () => {
 
   const BASE_URL = 'https://web-production-d2db.up.railway.app';
 
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+const openModal = () => setIsModalOpen(true);
+const closeModal = () => setIsModalOpen(false);
+
+const confirmDeleteFile = () => {
+  handleDeleteFile(); // your existing delete logic
+  closeModal();
+};
+
+
   // Initialize the uploaded file from the state
   useEffect(() => {
     if (state?.file) {
@@ -26,12 +39,11 @@ const ResultsPage = () => {
   useEffect(() => {
     if (uploadedFile) {
       const fileExtension = uploadedFile.name.split('.').pop().toLowerCase();
-
       if (!['txt', 'pdf', 'docx'].includes(fileExtension)) {
         setFileContent('Unsupported file type. Only .txt, .pdf, and .docx are supported.');
         setFileLines([]);
         return;
-      }
+      }     
 
       // Read the file content for display (backend handles conversion for parsing)
       const reader = new FileReader();
@@ -158,7 +170,7 @@ const ResultsPage = () => {
               <span className="results-success-icon"></span>
               <p>"{uploadedFile.name}" Has been uploaded successfully</p>
             </div>
-            <button className="results-delete-btn" onClick={handleDeleteFile}>
+            <button className="results-delete-btn" onClick={openModal}>
               <span className="results-trash-icon"></span>
             </button>
           </div>
@@ -226,6 +238,27 @@ const ResultsPage = () => {
           )}
         </div>
       </main>
+      
+  {isModalOpen && (
+  <div className="modal-overlay">
+    <div className="modal-box">
+      <span className="modal-close" onClick={closeModal}>&times;</span>
+      <button onClick={closeModal}>
+      <img src={close} alt="close" className='close'></img>
+      </button>
+      <div className="modal-icon">
+        <img src={Delete} alt="delite"></img>
+      </div>
+      <h2 className="modal-warning">Warning!</h2>
+      <p className='message'>Are you sure you want to delete the uploaded file?</p>
+      <div className="modal-actions">
+        <button className="modal-yes" onClick={confirmDeleteFile}>YES</button>
+        <button className="modal-no" onClick={closeModal}>NO</button>
+      </div>
+    </div>
+  </div>
+)}
+
     </div>
   );
 };
