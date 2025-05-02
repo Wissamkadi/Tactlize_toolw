@@ -10,6 +10,7 @@ export default function AboutPage() {
   return (
     <div className="about-page">
       <section className="section intro-section">
+        
         <div className="section-content">
           <h2 className="section-subtitle">About Us</h2>
           <h1 className="section-title">Architectural Tactic Detector</h1>
@@ -22,8 +23,8 @@ export default function AboutPage() {
           <img
             src={aboutImage}
             alt="Illustration of software tactic detection"
-            style={{ maxWidth: "100%", height: "auto"}}
-          />
+            style={{ maxWidth: "100%", height: "auto" , left:"5px"}}
+          />         
         </div>
       </section>
 

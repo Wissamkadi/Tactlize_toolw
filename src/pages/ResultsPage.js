@@ -6,10 +6,14 @@ const ResultsPage = () => {
   const { state } = useLocation();
   const [uploadedFile, setUploadedFile] = useState(null);
   const [fileContent, setFileContent] = useState('Trace will appear here from the uploaded file');
+  const [fileLines, setFileLines] = useState([]); // Store file lines for highlighting
+  const [invalidLines, setInvalidLines] = useState([]); // Store invalid line numbers
   const [selectedTactic, setSelectedTactic] = useState('');
   const [result, setResult] = useState('');
   const [exportSuccess, setExportSuccess] = useState(false);
   const [pdfDownloadUrl, setPdfDownloadUrl] = useState('');
+
+  const BASE_URL = 'https://web-production-d2db.up.railway.app';
 
   // Initialize the uploaded file from the state
   useEffect(() => {
@@ -18,46 +22,29 @@ const ResultsPage = () => {
     }
   }, [state]);
 
-  // Handle file content display (txt or pdf converted to txt)
+  // Handle file content display (txt, pdf, or docx)
   useEffect(() => {
     if (uploadedFile) {
       const fileExtension = uploadedFile.name.split('.').pop().toLowerCase();
 
-      if (fileExtension === 'txt') {
-        // For txt files, read directly
-        const reader = new FileReader();
-        reader.onload = (e) => {
-          const text = e.target.result;
-          setFileContent(text || 'No content found in the file.');
-        };
-        reader.onerror = () => {
-          setFileContent('Error reading the file.');
-        };
-        reader.readAsText(uploadedFile);
-      } else if (fileExtension === 'pdf') {
-        // For pdf files, send to backend to convert to txt
-        const formData = new FormData();
-        formData.append('file', uploadedFile);
-
-        fetch('http://localhost:8080/api/files/upload/convert-to-txt', {
-          method: 'POST',
-          body: formData,
-        })
-          .then((response) => response.json())
-          .then((data) => {
-            if (data.convertedText) {
-              setFileContent(data.convertedText);
-            } else {
-              setFileContent('Error converting PDF to text.');
-            }
-          })
-          .catch((error) => {
-            console.error('PDF conversion error:', error);
-            setFileContent(`Error converting PDF: ${error.message}`);
-          });
-      } else {
-        setFileContent('Unsupported file type. Only .txt and .pdf are supported.');
+      if (!['txt', 'pdf', 'docx'].includes(fileExtension)) {
+        setFileContent('Unsupported file type. Only .txt, .pdf, and .docx are supported.');
+        setFileLines([]);
+        return;
       }
+
+      // Read the file content for display (backend handles conversion for parsing)
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const text = e.target.result;
+        setFileContent(text || 'No content found in the file.');
+        setFileLines(text ? text.split('\n') : []); // Split into lines for highlighting
+      };
+      reader.onerror = () => {
+        setFileContent('Error reading the file.');
+        setFileLines([]);
+      };
+      reader.readAsText(uploadedFile);
     }
   }, [uploadedFile]);
 
@@ -77,7 +64,7 @@ const ResultsPage = () => {
     formData.append('file', uploadedFile);
 
     try {
-      const response = await fetch(`http://localhost:8080/api/files/upload/${selectedTactic}`, {
+      const response = await fetch(`${BASE_URL}/api/files/upload/${selectedTactic}`, {
         method: 'POST',
         body: formData,
       });
@@ -87,18 +74,22 @@ const ResultsPage = () => {
       if (response.ok) {
         setResult(data.parsedResult || 'No parsed result returned.');
         setPdfDownloadUrl(data.pdfDownloadUrl || '');
+        setInvalidLines([]); // Clear invalid lines on success
       } else {
-        if (Array.isArray(data)) {
-          setResult(data.join('\n'));
+        if (data.error && data.invalidLines) {
+          setResult(`❌ Format errors found at lines: ${data.invalidLines.join(', ')}`);
+          setInvalidLines(data.invalidLines); // Store invalid lines for highlighting
         } else {
           setResult(data || 'Unknown error occurred.');
+          setInvalidLines([]);
         }
         setPdfDownloadUrl('');
       }
     } catch (error) {
       console.error('Fetch error:', error);
-      setResult(`Error connecting to the backend: ${error.message}. Please ensure the backend server is running on http://localhost:8080.`);
+      setResult(`Error connecting to the backend: ${error.message}. Please ensure the backend server is running.`);
       setPdfDownloadUrl('');
+      setInvalidLines([]);
     }
   };
 
@@ -106,7 +97,7 @@ const ResultsPage = () => {
   const handleExport = () => {
     if (pdfDownloadUrl) {
       const link = document.createElement('a');
-      link.href = `http://localhost:8080${pdfDownloadUrl}`;
+      link.href = `${BASE_URL}${pdfDownloadUrl}`;
       link.download = 'result.pdf';
       link.click();
       setExportSuccess(true);
@@ -117,10 +108,36 @@ const ResultsPage = () => {
   const handleDeleteFile = () => {
     setUploadedFile(null);
     setFileContent('Trace will appear here from the uploaded file');
+    setFileLines([]);
+    setInvalidLines([]);
     setResult('');
     setSelectedTactic('');
     setPdfDownloadUrl('');
     setExportSuccess(false);
+  };
+
+  // Render file content with highlighted invalid lines
+  const renderFileContent = () => {
+    if (!fileLines.length) {
+      return <p>{fileContent}</p>;
+    }
+
+    return fileLines.map((line, index) => {
+      const lineNumber = index + 1;
+      const isInvalid = invalidLines.includes(lineNumber);
+      return (
+        <p
+          key={lineNumber}
+          style={{
+            margin: 0,
+            backgroundColor: isInvalid ? '#ffcccc' : 'transparent',
+            color: isInvalid ? '#ff0000' : '#333333',
+          }}
+        >
+          {lineNumber}: {line}
+        </p>
+      );
+    });
   };
 
   return (
@@ -150,9 +167,7 @@ const ResultsPage = () => {
         <div className="results-content-area">
           <div className="results-trace-area">
             <h2>The Uploaded Execution Trace</h2>
-            <div className="results-trace-content">
-              <p>{fileContent}</p>
-            </div>
+            <div className="results-trace-content">{renderFileContent()}</div>
           </div>
 
           <div className="results-output-area">
