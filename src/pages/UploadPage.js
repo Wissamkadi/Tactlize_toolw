@@ -45,7 +45,7 @@ export default function UploadPage() {
           </div>
         </div>
 
-        {/* Guideline Grid Section */}
+        {/* Guideline Section */}
         <div className="guideline-section">
           <div className="upload-info">
             <div className="info-item">
