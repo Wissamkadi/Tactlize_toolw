@@ -62,19 +62,19 @@
     }
   
   .card3 {
-      padding: var(--spacing-md);
+      padding: var(--spacing-2xs);
       margin-bottom: var(--spacing-md);
       color: var(--gray-1);
       box-shadow: 4px 4px 18px rgba(255, 255, 255, 0.15);
       border-radius: 30px;
       background: rgba(189, 189, 189, 0.19);
       font-size: 24px;
-      width: 1080px;
+      width: 1300px;
       height: 200px;
       margin-bottom: 20px;
       margin-left: 75px;
       margin-right: 75px;
-  }
+  }z
   /* Button Styles */
   .btn2{
       display: flex;
@@ -106,6 +106,6 @@
     width: 100px;
     height: 100px;
     left: 85%;
-    top: 190%;
+    top: 170%;
     transform: rotate(7.57deg);
   }

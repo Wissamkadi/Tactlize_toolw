@@ -32,7 +32,7 @@
 
 .results-decor-small {
   position: absolute;
-  top: 80px;
+  top: 70px;
   right: 2vw;
   width: 50.61px;
   height: 50.57px;
@@ -362,7 +362,8 @@
 }
 
 .results-tactic-option.selected {
-  background-color: #e69500;
+   background-color: var(--primary); /* Dark blue when selected */
+  color: var(--secondary);
 }
 
 .results-export-area {
@@ -453,7 +454,7 @@
   }
 
   .results-play-btn {
-    left: 1160px;
+    left: 1220px;
     top: 50px;
     width: 40px;
     height: 40px;
@@ -465,7 +466,7 @@
   }
 
   .results-tactic-area h3 {
-    left: 90px;
+    left: 30px;
     top: 600px;
     font-size: 20px;
     line-height: 25px;
@@ -478,7 +479,7 @@
 
   .results-tactic-option.id-password {
     left: 0px;
-    top: 650px;
+    top: 670px;
     width: 300px;
     height: 50px;
     padding: 5px 5px;
@@ -487,7 +488,7 @@
 
   .results-tactic-option.ping-echo {
     left: 0px;
-    top: 710px;
+    top: 730px;
     width: 300px;
     height: 50px;
     padding: 5px 5px;
@@ -496,7 +497,7 @@
 
   .results-tactic-option.maintain-data-confidentiality {
     left: 150px;
-    top: 770px;
+    top: 790px;
     width: 300px;
     height: 50px;
     padding: 5px 5px;
@@ -505,7 +506,7 @@
 
   .results-tactic-option.one-time-password {
     left: 320px;
-    top: 650px;
+    top: 670px;
     width: 300px;
     height: 50px;
     padding: 5px 5px;
@@ -514,7 +515,7 @@
 
   .results-tactic-option.maintain-multiple-copies {
     left: 320px;
-    top: 710px;
+    top: 730px;
     width: 300px;
     height: 50px;
     padding: 5px 5px;
@@ -538,17 +539,17 @@
   }
 
   .results-decor-large {
-      top: 20px;
+      top: 100px;
       right: 6vw;
-      width: 101.32px;
-      height: 140px;
+      width: 90px;
+      height: 120px;
     }
   
     .results-decor-small {
-        top: 155px; /* Slightly higher than the large image */
-        right: 1vw; /* Slightly further from the right edge */
-        width: 90.61px;
-        height: 90.57px;
+        top: 150px; /* Slightly higher than the large image */
+        right: 0.5vw; /* Slightly further from the right edge */
+        width: 80px;
+        height: 80px;
         transform: rotate(+14.76deg);
     }
   }
