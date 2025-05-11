@@ -93,7 +93,7 @@
 
 /* Guideline Grid Section */
 .guideline-section {
-  width: 100%;
+  width: 115%;
   display: flex;
   justify-content: center;
 }
@@ -106,7 +106,7 @@
   padding: 0 0; /* Figma padding */
   border: none; /* No border per Figma */
   border-radius: 0;
-  width: 100%; 
+  width: 115%; 
   height: 171px; /* Figma height */
   box-sizing: border-box;
 }
@@ -193,7 +193,7 @@
   }
 
   .info-item {
-    width: 410px; /* Scaled down proportionally */
+    width: 390px; /* Scaled down proportionally */
     height: 69px;
     gap: 6px;
   }
@@ -239,7 +239,7 @@
   }
 
   .info-item {
-    width: 280px; /* Scaled down */
+    width: 260px; /* Scaled down */
     height: 55px;
     gap: 6px; /* Scaled down */
   }

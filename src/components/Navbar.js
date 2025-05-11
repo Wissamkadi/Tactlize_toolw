@@ -36,7 +36,7 @@ const translationsData = {
     home: "Accueil",
     about: "À propos",
     tactics: "Tactiques Architecturales",
-    detect: "Détecter maintenant",
+    detect: "Détecter",
     contact: "Nous Contacter",
     tacticsList: "Liste des Tactiques",
     maintainMCopies: {

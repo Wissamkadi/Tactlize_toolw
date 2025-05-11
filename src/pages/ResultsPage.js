@@ -7,7 +7,7 @@ import close from '../styles/icons/close.svg';
 // Define translations outside the component to avoid re-creation
 const translationsData = {
   en: {
-    title: 'Detect <span className="highlighted">Architectural Tactics</span> in your trace',
+    title: 'Detect <span class="highlighted">Architectural Tactics</span> in your trace',
     fileUploaded: '"{uploadedFile.name}" Has been uploaded successfully',
     traceTitle: 'The Uploaded Execution Trace',
     resultTitle: 'The Result',
@@ -31,7 +31,7 @@ const translationsData = {
     modalNo: 'NO'
   },
   fr: {
-    title: 'Détecter les tactiques architecturales dans votre trace',
+    title: 'Détecter les <span class="highlighted">tactiques architecturales</span> dans votre trace',
     fileUploaded: "Le fichier '{uploadedFile.name}' a été téléchargé avec succès",
     traceTitle: 'La trace d\'exécution téléchargée',
     resultTitle: 'Le Résultat',
