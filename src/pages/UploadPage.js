@@ -5,7 +5,7 @@ import '../styles/Upload.css';
 // Define translations outside the component to avoid re-creation
 const translationsData = {
   en: {
-    title: 'Detect <span className="highlighted">Architectural Tactics</span> in your trace',
+    title: 'Detect <span class="highlighted">Architectural Tactics</span> in your trace',
     uploadText: 'Drag & upload your trace here',
     uploadButton: 'Upload from here',
     guideline: {
@@ -36,7 +36,7 @@ const translationsData = {
     }
   },
   fr: {
-    title: 'Détecter les tactiques architecturales dans votre trace',
+    title: 'Détecter les <span class="highlighted">tactiques architecturales</span> dans votre trace',
     uploadText: 'Glisser et télécharger votre trace ici',
     uploadButton: 'Télécharger depuis ici',
     guideline: {
