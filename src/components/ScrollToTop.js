@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import scroll from '../styles/icons/scroll.png';
 
 const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -32,7 +33,7 @@ const ScrollToTop = () => {
         className="scroll-to-top-btn"
         title="Go to top"
       >
-        ↑
+       <img src={scroll} alt="Scroll to top" style={{ width: '30px', height: '30px', objectFit: 'contain' }} />
       </button>
     )
   );

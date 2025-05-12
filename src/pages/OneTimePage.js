@@ -52,6 +52,8 @@ export default function OneTimePage() {
 
   const translations = useMemo(() => translationsData, []);
 
+
+  
   return (
     <div className='OneTime-page'>
       <section className="section">

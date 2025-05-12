@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import React, { useState, useEffect, useMemo } from 'react';
 import '../styles/MaintainData.css';
 import '../styles/global.css';
@@ -35,6 +35,7 @@ const translationsData = {
 };
 
 export default function MaintainDataPagePage() {
+  const navigate = useNavigate();
   const [language, setLanguage] = useState(localStorage.getItem('language') === 'FR/EN' ? 'fr' : 'en');
 
   useEffect(() => {
@@ -51,6 +52,12 @@ export default function MaintainDataPagePage() {
   }, [language]);
 
   const translations = useMemo(() => translationsData, []);
+
+  const handleStartDetecting = () => {
+    navigate('/upload', {
+      state: { tactic: 'MaintainData' } // This will be passed to the upload page
+    });
+  };
 
   return (
     <div className='MaintainData-page'>
@@ -87,13 +94,15 @@ export default function MaintainDataPagePage() {
         <h4>{translations[language].tradeoffsTitle}</h4>
         <p>{translations[language].tradeoffsText}</p>
       </div>
-      <img src={challenge} alt='challenge' id='challenge1'></img>
+
+      <img src={challenge} alt='challenge' id='challenge1' />
+
       <div>
-        <Link to="/upload" className="btn2 btn-primary">
+        <button onClick={handleStartDetecting} className="btn2 btn-primary">
           {translations[language].startDetecting}
           <span className="btn-icon">→</span>
-        </Link>
+        </button>
       </div>
-    </div>  
-  )
+    </div>
+  );
 }

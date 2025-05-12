@@ -309,3 +309,126 @@
     font-size: 12px; /* Scaled down */
   }
 }
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  
+}
+
+.modal {
+  background: white;
+  margin: 15% auto;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  width: 375px;
+  height: 225px; /* Ensure a fixed height or use max-height */
+  max-height: 80vh; /* Optional: To control the max height */
+  border-radius: 18px;
+  overflow-y: auto; /* This ensures scrolling works if content exceeds the height */
+}
+
+
+.modal h2 {
+  position: absolute;
+  width: 102px;
+  height: 30px;
+  left: calc(50% - 65px/2);
+  top: calc(50% - 30px/2 - 13.5px);
+  font-family: 'OutfitRegular',sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+  color: #DD1E1E;
+}
+
+.modal p {
+  position: absolute;
+  width: 270px;
+  height: 21px;
+  left: calc(50% - 270px/2);
+  top: 126px;
+  font-family: 'OutfitRegular',sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16.5px;
+  line-height: 21px;
+  text-align: center;
+  color: #000000;
+}
+
+.modal ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  max-height: 120px; /* Adjust based on your modal size */
+  overflow-y: auto;
+  text-align: left;
+}
+
+
+.modal ul li {
+  font-size: 15px;
+  font-family: 'OutfitRegular', sans-serif;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.close-btn {
+  padding: 10px 20px;
+  background-color: #DD1E1E;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-family: 'OutfitRegular', sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  background-color: #b81717;
+}
+.try-again-btn {
+
+  /* YES */
+border: none;
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 6px 30px;
+gap: 15px;
+
+position: absolute;
+width: 124px;
+height: 31px;
+left: 121.5px;
+top: 181.5px;
+color:var(--white);
+background: #E74F4F;
+border-radius: 7.5px;
+
+}
+
+.try-again-btn:hover {
+  background-color: #d32f2f; /* Darker red when hovered */
+}
+/* Liste des lignes avec défilement */
+.scrollable {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  max-height: 150px; /* Définir la hauteur maximale pour que le défilement fonctionne */
+}
+
+.scrollable li {
+  padding: 5px 0;
+}
+

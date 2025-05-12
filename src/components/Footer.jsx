@@ -67,7 +67,7 @@ const Footer = () => {
               <li><Link to="/">{translations[language].home}</Link></li>
               <li><Link to="/about">{translations[language].about}</Link></li>
               <li><Link to="/tactics">{translations[language].tactics}</Link></li>
-              <li><Link to="/DetectNow">{translations[language].detect}</Link></li>
+              <li><Link to="/upload">{translations[language].detect}</Link></li>
             </ul>
           </div>
         </div>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/Upload.css';
+import Frame from '../styles/icons/Frame.svg';
 
 // Define translations outside the component to avoid re-creation
 const translationsData = {
@@ -15,7 +16,7 @@ const translationsData = {
       },
       requiredFormat: {
         title: 'Required Format',
-        description: 'Each line must follow this structure: CALLER::caller,METHOD::mthd,CALLEE::callee;'
+        description: 'Each line must follow this structure: CALLER:caller,METHOD:mthd,CALLEE:callee;'
       },
       filePreparation: {
         title: 'File Preparation Guidelines',
@@ -46,7 +47,7 @@ const translationsData = {
       },
       requiredFormat: {
         title: 'Format requis',
-        description: 'Chaque ligne doit suivre cette structure : CALLER::caller,METHOD::mthd,CALLEE::callee;'
+        description: 'Chaque ligne doit suivre cette structure : CALLER:caller,METHOD:mthd,CALLEE:callee;'
       },
       filePreparation: {
         title: 'Directives de préparation des fichiers',
@@ -71,8 +72,9 @@ const translationsData = {
 export default function UploadPage() {
   const navigate = useNavigate();
   const [language, setLanguage] = useState(localStorage.getItem('language') === 'FR/EN' ? 'fr' : 'en');
+  const [showModal, setShowModal] = useState(false);
+  const [invalidLines, setInvalidLines] = useState([]);
 
-  // Poll localStorage for language changes
   useEffect(() => {
     const checkLanguage = () => {
       const storedLanguage = localStorage.getItem('language');
@@ -82,31 +84,44 @@ export default function UploadPage() {
       }
     };
 
-    const interval = setInterval(checkLanguage, 100); // Check every 100ms
-    return () => clearInterval(interval); // Cleanup on unmount
+    const interval = setInterval(checkLanguage, 100);
+    return () => clearInterval(interval);
   }, [language]);
 
-  // Memoize translations to prevent re-creation
   const translations = useMemo(() => translationsData, []);
 
   const handleLocalUpload = (event) => {
     const file = event.target.files[0];
     if (file) {
-      setTimeout(() => {
-        navigate('/ResultsPage', { state: { file } });
-      }, 1000);
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const content = e.target.result;
+        const lines = content.split(/\r?\n/);
+        const regex = /^CALLER:[^,]+,METHOD:[^,]+,CALLEE:[^;]+;$/;
+
+        const invalids = lines
+          .map((line, index) => ({ line, index }))
+          .filter(({ line }) => line.trim() && !regex.test(line));
+
+        if (invalids.length > 0) {
+          const invalidLineNumbers = invalids.map(({ index }) => index + 1).join(', ');
+          setInvalidLines(invalidLineNumbers);  // Store the invalid line numbers as a string
+          setShowModal(true);
+        } else {
+          navigate('/ResultsPage', { state: { file } });
+        }
+      };
+      reader.readAsText(file);
     }
   };
 
   return (
     <div className="display-page">
       <main className="main-content">
-        {/* Title Section */}
         <div className="title-section">
           <h1 className="main-title" dangerouslySetInnerHTML={{ __html: translations[language].title }}></h1>
         </div>
 
-        {/* Upload Section */}
         <div className="upload-section">
           <div className="upload-box">
             <div className="upload-icon"></div>
@@ -127,59 +142,35 @@ export default function UploadPage() {
           </div>
         </div>
 
-        {/* Guideline Section */}
         <div className="guideline-section">
           <div className="upload-info">
-            <div className="info-item">
-              <span className="info-icon icon--accepted-file"></span>
-              <p>
-                <span className="info-title">{translations[language].guideline.acceptedFileTypes.title}</span>
-                <br />
-                {translations[language].guideline.acceptedFileTypes.description}
-              </p>
-            </div>
-            <div className="info-item">
-              <span className="info-icon icon--required-format"></span>
-              <p>
-                <span className="info-title">{translations[language].guideline.requiredFormat.title}</span>
-                <br />
-                {translations[language].guideline.requiredFormat.description}
-              </p>
-            </div>
-            <div className="info-item">
-              <span className="info-icon icon--file-preparation"></span>
-              <p>
-                <span className="info-title">{translations[language].guideline.filePreparation.title}</span>
-                <br />
-                {translations[language].guideline.filePreparation.description}
-              </p>
-            </div>
-            <div className="info-item">
-              <span className="info-icon icon--document-control"></span>
-              <p>
-                <span className="info-title">{translations[language].guideline.documentControl.title}</span>
-                <br />
-                {translations[language].guideline.documentControl.description}
-              </p>
-            </div>
-            <div className="info-item">
-              <span className="info-icon icon--automatic-deletion"></span>
-              <p>
-                <span className="info-title">{translations[language].guideline.automaticDeletion.title}</span>
-                <br />
-                {translations[language].guideline.automaticDeletion.description}
-              </p>
-            </div>
-            <div className="info-item">
-              <span className="info-icon icon--privacy-assurance"></span>
-              <p>
-                <span className="info-title">{translations[language].guideline.privacyAssurance.title}</span>
-                <br />
-                {translations[language].guideline.privacyAssurance.description}
-              </p>
-            </div>
+            {Object.values(translations[language].guideline).map((item, index) => (
+              <div className="info-item" key={index}>
+                <span className={`info-icon icon--${Object.keys(translations[language].guideline)[index].toLowerCase()}`}></span>
+                <p>
+                  <span className="info-title">{item.title}</span><br />
+                  {item.description}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
+
+        {/* Modal */}
+        {showModal && (
+          <div className="modal-overlay">
+            <div className="modal">
+            <img src={Frame} alt='sad'></img>
+            <ul className="scrollable">
+            <h2>Error!</h2>
+              <p>Unable to upload the file<br></br>
+              Format Error at line(s)<br></br>
+              {invalidLines}</p>
+              </ul>
+              <button className="try-again-btn" onClick={() => setShowModal(false)}>Try Again</button>
+            </div>
+          </div>
+        )}
       </main>
     </div>
   );
