@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import '../styles/Upload.css';
 import Frame from '../styles/icons/Frame.svg';
 
-// Define translations outside the component to avoid re-creation
 const translationsData = {
   en: {
     title: 'Detect <span class="highlighted">Architectural Tactics</span> in your trace',
@@ -76,15 +75,11 @@ export default function UploadPage() {
   const [invalidLines, setInvalidLines] = useState([]);
 
   useEffect(() => {
-    const checkLanguage = () => {
-      const storedLanguage = localStorage.getItem('language');
-      const newLanguage = storedLanguage === 'FR/EN' ? 'fr' : 'en';
-      if (newLanguage !== language) {
-        setLanguage(newLanguage);
-      }
-    };
-
-    const interval = setInterval(checkLanguage, 100);
+    const interval = setInterval(() => {
+      const storedLang = localStorage.getItem('language');
+      const newLang = storedLang === 'FR/EN' ? 'fr' : 'en';
+      if (newLang !== language) setLanguage(newLang);
+    }, 100);
     return () => clearInterval(interval);
   }, [language]);
 
@@ -92,27 +87,27 @@ export default function UploadPage() {
 
   const handleLocalUpload = (event) => {
     const file = event.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        const content = e.target.result;
-        const lines = content.split(/\r?\n/);
-        const regex = /^CALLER:[^,]+,METHOD:[^,]+,CALLEE:[^;]+;$/;
+    if (!file) return;
 
-        const invalids = lines
-          .map((line, index) => ({ line, index }))
-          .filter(({ line }) => line.trim() && !regex.test(line));
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      const content = e.target.result;
+      const lines = content.split(/\r?\n/);
+      const regex = /^CALLER:[^,]+,METHOD:[^,]+,CALLEE:[^;]+;$/;
 
-        if (invalids.length > 0) {
-          const invalidLineNumbers = invalids.map(({ index }) => index + 1).join(', ');
-          setInvalidLines(invalidLineNumbers);  // Store the invalid line numbers as a string
-          setShowModal(true);
-        } else {
-          navigate('/ResultsPage', { state: { file } });
-        }
-      };
-      reader.readAsText(file);
-    }
+      const invalid = lines
+        .map((line, index) => ({ line, index }))
+        .filter(({ line }) => line.trim() && !regex.test(line));
+
+      if (invalid.length > 0) {
+        const invalidLineNumbers = invalid.map(({ index }) => index + 1);
+        setInvalidLines(invalidLineNumbers);
+        setShowModal(true);
+      } else {
+        navigate('/ResultsPage', { state: { file } });
+      }
+    };
+    reader.readAsText(file);
   };
 
   return (
@@ -156,16 +151,19 @@ export default function UploadPage() {
           </div>
         </div>
 
-        {/* Modal */}
         {showModal && (
           <div className="modal-overlay">
             <div className="modal">
-            <img src={Frame} alt='sad'></img>
-            <ul className="scrollable">
-            <h2>Error!</h2>
-              <p>Unable to upload the file<br></br>
-              Format Error at line(s)<br></br>
-              {invalidLines}</p>
+              <img src={Frame} alt="error" />
+                <h2>Error!</h2>
+                <p>
+                  Unable to upload the file.<br />
+                  Format error at line(s):<br />
+                  </p>
+                  <ul className="scrollable">
+                  <p>
+                  {invalidLines.join(', ')}
+                </p>
               </ul>
               <button className="try-again-btn" onClick={() => setShowModal(false)}>Try Again</button>
             </div>
