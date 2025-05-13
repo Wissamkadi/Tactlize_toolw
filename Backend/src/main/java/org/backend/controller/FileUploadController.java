@@ -13,7 +13,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/files")
-@CrossOrigin(origins = "http://localhost:3000") // Allow frontend access
+@CrossOrigin(origins = "https://tactlize-toolw.vercel.app") // Allow frontend access
 public class FileUploadController {
 
     private final FileService fileService;
