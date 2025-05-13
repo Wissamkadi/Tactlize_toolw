@@ -69,7 +69,7 @@ const ResultsPage = () => {
   const [pdfDownloadUrl, setPdfDownloadUrl] = useState('');
   const [language, setLanguage] = useState(localStorage.getItem('language') === 'FR/EN' ? 'fr' : 'en');
 
-  const BASE_URL = 'https://web-production-d2db.up.railway.app';
+const BASE_URL = 'https://web-production-be75b.up.railway.app';
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const openModal = () => setIsModalOpen(true);
@@ -145,9 +145,9 @@ const ResultsPage = () => {
     formData.append('file', uploadedFile);
 
     try {
-      const response = await fetch(`${BASE_URL}/api/files/upload/${selectedTactic}`, {
-        method: 'POST',
-        body: formData,
+const response = await fetch(`${BASE_URL}/api/files/upload/${selectedTactic}`, {
+  method: 'POST',
+  body: formData,
       });
 
       const data = await response.json();
