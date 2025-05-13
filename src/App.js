@@ -22,6 +22,7 @@ function App() {
     <Router>
       <ScrollToTop />
       <div className="app-container">
+          <title>Tactlize</title>
         <Navbar />
         <div className="content">
           <Routes>
