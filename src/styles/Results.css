@@ -12,7 +12,7 @@
 .results-content {
   flex: 1;
   display: flex;
-  margin-left: -5%;
+  margin-left: -4.5%;
   flex-direction: column;
   align-items: center;
   width: 100%;
@@ -139,11 +139,11 @@
 }
 
 .results-content-area {
-  width: 100%;
+  width: 92%;
   display: flex;
   justify-content: center;
   margin-bottom: 3rem;
-  gap: 2.5rem;
+  gap: 5rem;
   position: relative;
 }
 
@@ -169,7 +169,7 @@
 
 .results-trace-content {
   position: absolute;
-  width: 638px;
+  width: 590px !important;
   height: 476px;
   left: 45px;
   top: 200px;
@@ -240,7 +240,7 @@
   position: absolute;
   width: 45px;
   height: 45px;
-  left: 1322px;
+  left: 106% !important;
   top: 368px;
   background: #E53835;
   border-radius: 12px;
@@ -269,7 +269,7 @@
   position: absolute;
   width: 487px;
   height: 30px;
-  left: 117px;
+  left: 117px !important;
   top: 909px;
   font-family: 'OutfitSemiBold';
   font-style: normal;
@@ -310,9 +310,9 @@
 
 .results-tactic-option.id-password {
   position: absolute;
-  width: 285px;
+  width: 280px !important;
   height: 60px;
-  left: 104px;
+  left: 5.5% !important;
   top: 955px;
   padding: 17px 95px;
   gap: 10px;
@@ -320,9 +320,9 @@
 
 .results-tactic-option.ping-echo {
   position: absolute;
-  width: 285px;
+  width: 280px !important;
   height: 60px;
-  left: 399px;
+  left: 5.5% !important;
   top: 955px;
   padding: 17px 95px;
   gap: 10px;
@@ -330,9 +330,9 @@
 
 .results-tactic-option.maintain-data-confidentiality {
   position: absolute;
-  width: 285px;
+  width: 280px !important;
   height: 60px;
-  left: 104px;
+  left: 18.5% !important;
   top: 1028px;
   padding: 17px 95px;
   gap: 10px;
@@ -340,9 +340,9 @@
 
 .results-tactic-option.one-time-password {
   position: absolute;
-  width: 285px;
+  width: 280px !important;
   height: 60px;
-  left: 399px;
+  left: 31.5% !important;
   top: 1028px;
   padding: 17px 19px;
   gap: 10px;
@@ -350,9 +350,9 @@
 
 .results-tactic-option.maintain-multiple-copies {
   position: absolute;
-  width: 285px;
+  width: 280px !important;
   height: 64px;
-  left: 251px;
+  left: 31.5% !important;
   top: 1101px;
   padding: 17px 95px;
   gap: 10px;
