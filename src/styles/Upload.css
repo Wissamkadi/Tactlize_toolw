@@ -93,9 +93,10 @@
 
 /* Guideline Grid Section */
 .guideline-section {
-  width: 115%;
+  width: 110%;
   display: flex;
   justify-content: center;
+  margin-left: -3%;
 }
 
 .upload-info {
@@ -106,7 +107,7 @@
   padding: 0 0; /* Figma padding */
   border: none; /* No border per Figma */
   border-radius: 0;
-  width: 115%; 
+  width: 110%; 
   height: 171px; /* Figma height */
   box-sizing: border-box;
 }
@@ -116,7 +117,7 @@
   align-items: flex-start;
   width: 410px; /* Adjusted to fit 3 items per row within 1198.99px */
   height: 69px; /* Figma height for each group */
-  gap: 6px; /* Figma gap between icon and text */
+  gap: 5px !important; /* Figma gap between icon and text */
 }
 
 .info-icon {
@@ -316,119 +317,71 @@
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 1000;
-  
 }
 
 .modal {
   background: white;
-  margin: 15% auto;
-  padding: 20px;
+  border-radius: 16px;
+  padding: 0.75rem;
+  max-width: 500px;
+  width: 30%;
   text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   position: relative;
-  width: 375px;
-  height: 225px; /* Ensure a fixed height or use max-height */
-  max-height: 80vh; /* Optional: To control the max height */
-  border-radius: 18px;
-  overflow-y: auto; /* This ensures scrolling works if content exceeds the height */
 }
 
+.modal img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: -1rem; /* Reduce margin for closer placement */
+}
 
 .modal h2 {
-  position: absolute;
-  width: 102px;
-  height: 30px;
-  left: calc(50% - 65px/2);
-  top: calc(50% - 30px/2 - 13.5px);
-  font-family: 'OutfitRegular',sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 30px;
-  color: #DD1E1E;
+  color: #e53935;
+  font-size: 1.75rem;
+  margin-bottom: 0.25rem !important; /* Reduce margin for closer placement */
 }
 
 .modal p {
-  position: absolute;
-  width: 270px;
-  height: 21px;
-  left: calc(50% - 270px/2);
-  top: 126px;
-  font-family: 'OutfitRegular',sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16.5px;
-  line-height: 21px;
-  text-align: center;
-  color: #000000;
+  color: #444;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  white-space: pre-line;
 }
 
-.modal ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  max-height: 120px; /* Adjust based on your modal size */
+.scrollable {
+  max-height: 150px;
   overflow-y: auto;
-  text-align: left;
+  margin-top: 0.5rem;
+  padding: 0.75rem;
+  background-color: #fcebea;
+  border: 1px solid #f44336;
+  border-radius: 8px;
+  color: #b71c1c;
+  font-family: monospace;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
 }
 
 
-.modal ul li {
-  font-size: 15px;
-  font-family: 'OutfitRegular', sans-serif;
-  margin-bottom: 5px;
-  color: #333;
-}
-
-.close-btn {
-  padding: 10px 20px;
-  background-color: #DD1E1E;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-family: 'OutfitRegular', sans-serif;
-  font-size: 14px;
-  cursor: pointer;
-}
-
-.close-btn:hover {
-  background-color: #b81717;
-}
 .try-again-btn {
-
-  /* YES */
-border: none;
-/* Auto layout */
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
-padding: 6px 30px;
-gap: 15px;
-
-position: absolute;
-width: 124px;
-height: 31px;
-left: 121.5px;
-top: 181.5px;
-color:var(--white);
-background: #E74F4F;
-border-radius: 7.5px;
-
+  background-color: #e53935;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
 }
 
 .try-again-btn:hover {
-  background-color: #d32f2f; /* Darker red when hovered */
+  background-color: #c62828;
 }
-/* Liste des lignes avec défilement */
-.scrollable {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  max-height: 150px; /* Définir la hauteur maximale pour que le défilement fonctionne */
-}
-
-.scrollable li {
-  padding: 5px 0;
-}
-
