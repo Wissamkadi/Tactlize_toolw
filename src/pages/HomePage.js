@@ -65,6 +65,8 @@ const translationsData = {
 export default function HomePage() {
   const [language, setLanguage] = useState(localStorage.getItem('language') === 'FR/EN' ? 'fr' : 'en');
 
+  
+
   useEffect(() => {
     const checkLanguage = () => {
       const storedLanguage = localStorage.getItem('language');
@@ -73,6 +75,7 @@ export default function HomePage() {
         setLanguage(newLanguage);
       }
     };
+
 
     const interval = setInterval(checkLanguage, 100);
     return () => clearInterval(interval);
@@ -107,7 +110,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="tactics-section">
+      <section className="tactics-section" id="tactics-section">
         <div className="tactics-section-inner">
           <div className="tactics-title-section">
             <h2 className="tactics-title">{translations[language].tacticsTitle}</h2>
@@ -119,7 +122,7 @@ export default function HomePage() {
               <h3 className="tactic-name">{translations[language].idPassword.name}</h3>
               <p className="tactic-description">{translations[language].idPassword.description}</p>
               <Link to="/IDPassword">
-                <span className="learn-more">Learn More →</span>
+                <span className="learn-more">Learn More </span>
               </Link>
             </div>
 
@@ -128,7 +131,7 @@ export default function HomePage() {
               <h3 className="tactic-name">{translations[language].maintainData.name}</h3>
               <p className="tactic-description">{translations[language].maintainData.description}</p>
               <Link to="/MaintainData">
-                <span className="learn-more">Learn More →</span>
+                <span className="learn-more">Learn More </span>
               </Link>
             </div>
 
@@ -137,7 +140,7 @@ export default function HomePage() {
               <h3 className="tactic-name">{translations[language].maintainMCopies.name}</h3>
               <p className="tactic-description">{translations[language].maintainMCopies.description}</p>
               <Link to="/MaintainMCopies">
-                <span className="learn-more">Learn More →</span>
+                <span className="learn-more">Learn More </span>
               </Link>
             </div>
           </div>
@@ -148,7 +151,7 @@ export default function HomePage() {
               <h3 className="tactic-name">{translations[language].oneTime.name}</h3>
               <p className="tactic-description">{translations[language].oneTime.description}</p>
               <Link to="/OneTime">
-                <span className="learn-more">Learn More →</span>
+                <span className="learn-more">Learn More </span>
               </Link>
             </div>
 
@@ -157,7 +160,7 @@ export default function HomePage() {
               <h3 className="tactic-name">{translations[language].pingEcho.name}</h3>
               <p className="tactic-description">{translations[language].pingEcho.description}</p>
               <Link to="/PingEcho">
-                <span className="learn-more">Learn More →</span>
+                <span className="learn-more">Learn More </span>
               </Link>
             </div>
           </div>

@@ -11,7 +11,7 @@
   font-style: normal;
   font-weight: 400;
   font-size: 24px;
-  line-height: 44px;
+  line-height: 1300px;
   color: var(--gray-1);
   order: 1;
   align-self: stretch;
@@ -106,6 +106,6 @@
     width: 100px;
     height: 100px;
     left: 85%;
-    top: 170%;
+    top: 227%;
     transform: rotate(7.57deg);
   }

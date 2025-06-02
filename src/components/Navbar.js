@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState, useEffect, useMemo } from "react";
 import logo from "../styles/icons/tactlize-logo.svg"; 
 import logo2 from "../styles/icons/logo2.svg"; 
@@ -101,6 +102,22 @@ export default function Navbar() {
 
   const translations = useMemo(() => translationsData, []);
   const langKey = language === "FR/EN" ? "fr" : "en";
+  
+  const navigate = useNavigate();
+
+    const handleTacticsClick = (e) => {
+    e.preventDefault(); // prevent normal link behavior
+
+    navigate("/"); // go to home page
+
+    // Scroll after small delay so that the page is rendered
+    setTimeout(() => {
+      const element = document.getElementById("tactics-section");
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 100); // 100ms delay (adjust if needed)
+  };
 
   return (
     <nav className={`navbar ${isScrolled ? "scrolled" : ""}`}>
@@ -130,9 +147,10 @@ export default function Navbar() {
           <Link to="/about"><nav>{translations[langKey].about}</nav></Link>
         </li>
         <li className="dropdown">
-          <Link to="/tactics">
+        <a href="/" onClick={handleTacticsClick}>
             <nav>{translations[langKey].tactics} <span className="arrow"></span></nav>
-          </Link>
+                    </a>
+
           <div className="navbar-dropdown">
             <h4>{translations[langKey].tacticsList}</h4>
             <ul>

@@ -9,7 +9,7 @@ import image3 from '../styles/icons/image3.svg';
 // Define translations outside the component to avoid re-creation
 const translationsData = {
   en: {
-    title: 'Parser Generator <span className="colored-word">JavaCC</span>',
+    title: 'Parser Generator <span class="colored-word">JavaCC</span>',
     whatIsJavaCC: {
       subtitle: 'What is JavaCC?',
       description: 'JavaCC (Java Compiler Compiler) is a tool for defining and processing the syntax of programming languages using formal grammar rules. It generates parsers that help analyze structured text based on these rules.'

@@ -7,7 +7,7 @@ import close from '../styles/icons/close.svg';
 // Define translations outside the component to avoid re-creation
 const translationsData = {
   en: {
-    header: 'Reach Out to the <span className="colored-word">JavaCC</span> Parser Team',
+    header: 'Reach Out to the <span class="colored-word">JavaCC</span> Parser Team',
     intro: {
       title: 'Who are we?',
       description: 'We\'re a team of ESI students passionate about software architecture and grammar parsing. If you have questions about our tactic detection system, suggestions to enhance our parser, or you\'d just like to discuss JavaCC – we\'d love to hear from you!'
@@ -52,7 +52,7 @@ const translationsData = {
     }
   },
   fr: {
-    header: 'Contactez l\'équipe d\'analyseur <span className="colored-word">JavaCC</span>',
+    header: 'Contactez l\'équipe d\'analyseur <span class="colored-word">JavaCC</span>',
     intro: {
       title: 'Qui sommes-nous ?',
       description: 'Nous sommes une équipe d\'étudiants de l\'ESI passionnés par l\'architecture logicielle et l\'analyse grammaticale. Si vous avez des questions sur notre système de détection de tactiques, des suggestions pour améliorer notre analyseur, ou si vous souhaitez simplement discuter de JavaCC, nous serions ravis d\'avoir de vos nouvelles !'

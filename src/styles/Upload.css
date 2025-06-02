@@ -121,17 +121,18 @@
 }
 
 .info-icon {
-  width: 30px; /* Figma width */
-  height: 30px; /* Figma height */
+  width: 32px; /* Figma width */
+  height: 32px; /* Figma height */
   margin-top: 8px; /* Figma Y position */
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 }
 
-.display-page .icon--accepted-file {
+.display-page .icon--accepted-file-types {
   background-image: url('../styles/icons/ic-accepted-file.svg');
 }
+
 
 .display-page .icon--required-format {
   background-image: url('../styles/icons/ic-required-format.svg');
@@ -175,7 +176,7 @@
 /* Medium Laptop Screens (1024px to 1440px) */
 @media (min-width: 1024px) and (max-width: 1440px) {
   .main-title {
-    font-size: 3.125rem; /* 50px */
+    font-size: 3rem; /* 50px */
   }
 
   .upload-text {
@@ -209,18 +210,18 @@
     width: 410px; /* Scaled down: 320px - 32px icon - 10px gap */
     height: 69px;
     margin-top: 3px;
-    font-size: 18px;
+    font-size: 15px;
   }
 
   .info-item .info-title {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 
 /* Smaller Laptop Screens (768px to 1023px) */
 @media (min-width: 768px) and (max-width: 1023px) {
   .main-title {
-    font-size: 3rem; /* 48px */
+    font-size: 2.9rem; /* 48px */
   }
 
   .upload-text {

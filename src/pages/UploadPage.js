@@ -68,6 +68,8 @@ const translationsData = {
   }
 };
 
+
+
 export default function UploadPage() {
   const navigate = useNavigate();
   const [language, setLanguage] = useState(localStorage.getItem('language') === 'FR/EN' ? 'fr' : 'en');
@@ -141,7 +143,12 @@ export default function UploadPage() {
           <div className="upload-info">
             {Object.values(translations[language].guideline).map((item, index) => (
               <div className="info-item" key={index}>
-                <span className={`info-icon icon--${Object.keys(translations[language].guideline)[index].toLowerCase()}`}></span>
+<span
+  className={`info-icon icon--${Object.keys(translations[language].guideline)[index]
+    .replace(/([a-z])([A-Z])/g, '$1-$2')
+    .toLowerCase()}`}
+/>
+
                 <p>
                   <span className="info-title">{item.title}</span><br />
                   {item.description}

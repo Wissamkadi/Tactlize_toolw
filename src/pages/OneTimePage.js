@@ -7,7 +7,7 @@ import challenge from '../styles/icons/challenge.png';
 
 const translationsData = {
   en: {
-    title: 'The Onetime password<span className="colored-word">Tactic</span>',
+    title: 'The Onetime password<span class="colored-word">Tactic</span>',
     tagline: 'One-Time Pass, Full-Time Security',
     introTitle: 'Introduction to the Tactic',
     introText: 'The One-Time Password (OTP) Tactic enhances authentication security by generating a unique, temporary password for each login attempt. Unlike static passwords, OTPs prevent credential reuse and reduce the risk of attacks such as phishing and credential theft. They are typically delivered via SMS, email, or authentication apps, ensuring secure and time-sensitive access.',
@@ -20,7 +20,7 @@ const translationsData = {
     startDetecting: 'Start Detecting'
   },
   fr: {
-    title: 'La tactique de mot de passe à usage unique<span className="colored-word">Tactic</span>',
+    title: 'La tactique de mot de passe à usage unique<span class="colored-word">Tactic</span>',
     tagline: 'Passe unique, Sécurité permanente',
     introTitle: 'Introduction à la tactique',
     introText: 'La tactique de mot de passe à usage unique (OTP) renforce la sécurité de l\'authentification en générant un mot de passe temporaire et unique pour chaque tentative de connexion. Contrairement aux mots de passe statiques, les OTP empêchent la réutilisation des identifiants et réduisent les risques d\'attaques telles que le phishing ou le vol d\'identifiants. Ils sont généralement envoyés par SMS, email ou via une application d\'authentification, garantissant un accès sécurisé et limité dans le temps.',

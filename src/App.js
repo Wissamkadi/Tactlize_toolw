@@ -14,12 +14,14 @@ import OneTimePage from "./pages/OneTimePage";
 import PingEchoPage from "./pages/PingEchoPage";
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
+import ScrollaToTop from './components/ScrollaToTop';
 
 import './styles/global.css';
 
 function App() {
   return (
     <Router>
+      <ScrollaToTop />
       <ScrollToTop />
       <div className="app-container">
           <title>Tactlize</title>

@@ -17,7 +17,7 @@
 }
 
 .hero h1 {
-  font-size: 70PX;
+  font-size: 50px;
   color: var(--white);
   font-weight: var(--font-weight-semi-bold);
   line-height: 1.2;
@@ -29,14 +29,14 @@
 }
 
 .hero-description {
-  font-size: 24px;
+  font-size: 23px;
   font-family: 'OutfitSemiBold';
   color: var(--gray-2);
   margin-bottom: 2rem;
 }
 
 .hero-subdescription {
-  font-size: 24px;
+  font-size: 23px;
   font-family: 'OutfitSemiBold';
   color: var(--gray-2);
   margin-bottom: 3rem;
@@ -211,6 +211,8 @@
   flex-grow: 1; /* Takes available space */
 }
 
+
+
 .learn-more {
   font-size: 1rem;
   color: var(--secondary);
@@ -221,6 +223,27 @@
   left: 50%; /* Centers it horizontally */
   transform: translateX(-50%); /* Adjusts for centering */
 }
+
+.learn-more::after {
+  content: '⟶'; /* Bold-style arrow */
+  display: inline-block;
+  margin-left: 6px;
+  font-weight: 700; /* Makes the arrow bolder */
+  transition: transform 0.3s ease;
+  transform-origin: left center;
+    color: var(--secondary);
+
+}
+
+.learn-more:hover::after,
+.learn-more:focus::after {
+  transform: scaleX(1.5); /* Elongate arrow */
+    color: var(--secondary);
+
+}
+
+
+
 
 
 /* Media Queries for Responsiveness */

@@ -145,7 +145,7 @@ h3{
 }
 
 .arrow2 {
-  top: 338%;
+  top: 333%;
   left: 68%;
   transform: translateY(-50%) rotate(90deg);
 }
@@ -162,6 +162,6 @@ h3{
   width: 97.61px;
   height: 101.61px;
   left: 85%;
-  top: 37%;
+  top: 33%;
   transform: matrix(1, 0.07, -0.07, 1, 0, 0);
 }

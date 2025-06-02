@@ -7,7 +7,7 @@ import challenge from '../styles/icons/challenge.png';
 
 const translationsData = {
   en: {
-    title: 'Maintain Multiple Copies<span className="colored-word">Tactic</span>',
+    title: 'Maintain Multiple Copies<span class="colored-word">Tactic</span>',
     tagline: 'Redundancy for Reliability',
     introTitle: 'Introduction to the Tactic',
     introText: 'Caching is a technique used to improve system performance by storing frequently accessed data temporarily. However, improper caching mechanisms can expose sensitive data to unauthorized users. Ensuring data confidentiality in caching is crucial for maintaining security and privacy.',
@@ -20,7 +20,7 @@ const translationsData = {
     startDetecting: 'Start Detecting'
   },
   fr: {
-    title: 'Tactique de Maintien de Plusieurs Copies<span className="colored-word">Tactic</span>',
+    title: 'Tactique de Maintien de Plusieurs Copies<span class="colored-word">Tactic</span>',
     tagline: 'Redondance pour la fiabilité',
     introTitle: 'Introduction à la tactique',
     introText: 'La mise en cache est une technique utilisée pour améliorer les performances d’un système en stockant temporairement les données fréquemment consultées. Cependant, des mécanismes de mise en cache inappropriés peuvent exposer des données sensibles à des utilisateurs non autorisés. Garantir la confidentialité des données dans la mise en cache est essentiel pour maintenir la sécurité et la confidentialité.',
